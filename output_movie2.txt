@@ -1,0 +1,1649 @@
+[17:37:13] hb_init: starting libhb thread
+HandBrake rev0 (2013051899) - Linux x86_64 - http://handbrake.fr
+4 CPUs detected
+Opening /dev/sr0...
+[17:37:13] hb_scan: path=/dev/sr0, title_index=0
+libbluray/bdnav/index_parse.c:162: indx_parse(): error opening /media/KNOCKED_UP/BDMV/index.bdmv
+libbluray/bdnav/index_parse.c:162: indx_parse(): error opening /media/KNOCKED_UP/BDMV/BACKUP/index.bdmv
+libbluray/bluray.c:1725: nav_get_title_list(/media/KNOCKED_UP) failed (0x7f7ae0000900)
+[17:37:13] bd: not a bd - trying as a stream/file instead
+[17:37:13] dvd: Region mask 0xff
+[17:37:13] dvd: Warning, DVD device has no region set
+libdvdnav: Using dvdnav version 4.1.3
+libdvdread: Using libdvdcss version 1.2.13 for DVD access
+libdvdnav: DVD Title: KNOCKED_UP
+libdvdnav: DVD Serial Number: 3736b0e8
+libdvdnav: DVD Title (Alternative): UNRATED_G4_R1
+libdvdnav: Unable to find map file '/home/mark/.dvdnav/KNOCKED_UP.map'
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+
+libdvdread: Attempting to retrieve all CSS keys
+libdvdread: This can take a _long_ time, please be patient
+
+libdvdread: Get key for /VIDEO_TS/VIDEO_TS.VOB at 0x0000014b
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_0.VOB at 0x00018098
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_1.VOB at 0x0001809d
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_0.VOB at 0x00026da6
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_1.VOB at 0x00056b65
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_03_0.VOB at 0x00326236
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_03_1.VOB at 0x0032623b
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_0.VOB at 0x00374535
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_1.VOB at 0x0037453a
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_0.VOB at 0x003976be
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_1.VOB at 0x003976c3
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_0.VOB at 0x003dd42c
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_1.VOB at 0x003dd431
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_07_0.VOB at 0x003ec7dc
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_07_1.VOB at 0x003ec7e1
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_08_0.VOB at 0x003f3ef0
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_08_1.VOB at 0x003f3ef5
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_09_0.VOB at 0x003f6581
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_09_1.VOB at 0x003f6586
+libdvdread: Elapsed time 0
+libdvdread: Found 9 VTS's
+libdvdread: Elapsed time 0
+libdvdread: Using libdvdcss version 1.2.13 for DVD access
+[17:37:13] scan: DVD has 31 title(s)
+[17:37:13] scan: scanning title 1
+[17:37:13] scan: opening IFO for VTS 1
+[17:37:13] scan: duration is 00:03:36 (216020 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae0018fb0
+[17:37:13] scan: vts=1, ttn=1, cells=0->1, blocks=0->60623, 60624 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 1 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->60617 (60618), 215020 ms
+[17:37:13] scan: chap 2 c=1->1, b=60618->60623 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 2
+[17:37:13] scan: opening IFO for VTS 2
+[17:37:13] scan: duration is 02:07:31 (7651060 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae0019df0
+[17:37:13] scan: vts=2, ttn=1, cells=0->21, blocks=0->2946701, 2946702 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking audio 2
+[17:37:13] scan: id=0x81bd, lang=Deutsch (AC3), 3cc=deu ext=0
+[17:37:13] scan: checking audio 3
+[17:37:13] scan: id=0x82bd, lang=Magyar (AC3), 3cc=hun ext=0
+[17:37:13] scan: checking audio 4
+[17:37:13] scan: id=0x83bd, lang=English (AC3) (Director's Commentary 1), 3cc=eng ext=3
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: checking subtitle 9
+[17:37:13] scan: id=0x28bd, lang=English (Director's Commentary), 3cc=eng ext=13
+[17:37:13] scan: checking subtitle 10
+[17:37:13] scan: id=0x29bd, lang=Deutsch (Director's Commentary), 3cc=deu ext=13
+[17:37:13] scan: checking subtitle 11
+[17:37:13] scan: id=0x2abd, lang=Magyar (Director's Commentary), 3cc=hun ext=13
+[17:37:13] scan: checking subtitle 12
+[17:37:13] scan: id=0x2bbd, lang=English (Director's Commentary), 3cc=eng ext=13
+[17:37:13] scan: checking subtitle 13
+[17:37:13] scan: id=0x2cbd, lang=Suomi (Director's Commentary), 3cc=fin ext=13
+[17:37:13] scan: checking subtitle 14
+[17:37:13] scan: id=0x2dbd, lang=Norsk (Director's Commentary), 3cc=nor ext=13
+[17:37:13] scan: checking subtitle 15
+[17:37:13] scan: id=0x2ebd, lang=Svenska (Director's Commentary), 3cc=swe ext=13
+[17:37:13] scan: checking subtitle 16
+[17:37:13] scan: id=0x2fbd, lang=Turkish (Director's Commentary), 3cc=tur ext=13
+[17:37:13] scan: checking subtitle 17
+[17:37:13] scan: id=0x30bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 18
+[17:37:13] scan: id=0x31bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: title 2 has 21 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->207577 (207578), 529668 ms
+[17:37:13] scan: chap 2 c=1->1, b=207578->389415 (181838), 450491 ms
+[17:37:13] scan: chap 3 c=2->2, b=389416->523634 (134219), 347407 ms
+[17:37:13] scan: chap 4 c=3->3, b=523635->686797 (163163), 415586 ms
+[17:37:13] scan: chap 5 c=4->4, b=686798->817382 (130585), 339322 ms
+[17:37:13] scan: chap 6 c=5->5, b=817383->986606 (169224), 432598 ms
+[17:37:13] scan: chap 7 c=6->6, b=986607->1136272 (149666), 388297 ms
+[17:37:13] scan: chap 8 c=7->7, b=1136273->1248417 (112145), 291207 ms
+[17:37:13] scan: chap 9 c=8->8, b=1248418->1471232 (222815), 578452 ms
+[17:37:13] scan: chap 10 c=9->9, b=1471233->1645369 (174137), 452502 ms
+[17:37:13] scan: chap 11 c=10->11, b=1645370->1768331 (122962), 334598 ms
+[17:37:13] scan: chap 12 c=12->12, b=1768332->1883127 (114796), 287485 ms
+[17:37:13] scan: chap 13 c=13->13, b=1883128->2032538 (149411), 395572 ms
+[17:37:13] scan: chap 14 c=14->14, b=2032539->2153633 (121095), 319478 ms
+[17:37:13] scan: chap 15 c=15->15, b=2153634->2313565 (159932), 403387 ms
+[17:37:13] scan: chap 16 c=16->16, b=2313566->2444914 (131349), 344245 ms
+[17:37:13] scan: chap 17 c=17->17, b=2444915->2544024 (99110), 265439 ms
+[17:37:13] scan: chap 18 c=18->18, b=2544025->2724587 (180563), 469354 ms
+[17:37:13] scan: chap 19 c=19->19, b=2724588->2853314 (128727), 336410 ms
+[17:37:13] scan: chap 20 c=20->20, b=2853315->2946695 (93381), 268551 ms
+[17:37:13] scan: chap 21 c=21->21, b=2946696->2946701 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 3
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:00:52 (52200 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae002a8f0
+[17:37:13] scan: vts=3, ttn=1, cells=0->1, blocks=0->320217, 14369 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 3 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->14362 (14363), 51200 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 4
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:00:42 (42010 ms)
+[17:37:13] pgc_id: 2, pgn: 1: pgc: 0x7f7ae002b520
+[17:37:13] scan: vts=3, ttn=2, cells=0->1, blocks=14363->320217, 11631 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 4 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=14363->25987 (11625), 41010 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 5
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:02:41 (161020 ms)
+[17:37:13] pgc_id: 3, pgn: 1: pgc: 0x7f7ae007ce30
+[17:37:13] scan: vts=3, ttn=3, cells=0->1, blocks=25988->320217, 45126 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 5 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=25988->71107 (45120), 160020 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 6
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:01:01 (61000 ms)
+[17:37:13] pgc_id: 4, pgn: 1: pgc: 0x7f7ae008be20
+[17:37:13] scan: vts=3, ttn=4, cells=0->1, blocks=71108->320217, 16797 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 6 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=71108->87898 (16791), 60000 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 7
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:00:35 (35170 ms)
+[17:37:13] pgc_id: 5, pgn: 1: pgc: 0x7f7ae008cd40
+[17:37:13] scan: vts=3, ttn=5, cells=0->1, blocks=87899->320217, 9714 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 7 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=87899->97606 (9708), 34170 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 8
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:00:39 (39120 ms)
+[17:37:13] pgc_id: 6, pgn: 1: pgc: 0x7f7ae008cac0
+[17:37:13] scan: vts=3, ttn=6, cells=0->1, blocks=97607->320217, 10673 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 8 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=97607->108273 (10667), 38120 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 9
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:01:00 (60100 ms)
+[17:37:13] pgc_id: 7, pgn: 1: pgc: 0x7f7ae009c970
+[17:37:13] scan: vts=3, ttn=7, cells=0->1, blocks=108274->320217, 16739 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 9 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=108274->125006 (16733), 59100 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 10
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:01:44 (104120 ms)
+[17:37:13] pgc_id: 8, pgn: 1: pgc: 0x7f7ae009c400
+[17:37:13] scan: vts=3, ttn=8, cells=0->1, blocks=125007->320217, 28946 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 10 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=125007->153946 (28940), 103120 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 11
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:01:31 (91100 ms)
+[17:37:13] pgc_id: 9, pgn: 1: pgc: 0x7f7ae008b9a0
+[17:37:13] scan: vts=3, ttn=9, cells=0->1, blocks=153947->320217, 25481 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 11 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=153947->179421 (25475), 90100 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 12
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:00:53 (53360 ms)
+[17:37:13] pgc_id: 10, pgn: 1: pgc: 0x7f7ae00ad510
+[17:37:13] scan: vts=3, ttn=10, cells=0->1, blocks=179422->320217, 14393 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 12 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=179422->193808 (14387), 52360 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 13
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:01:12 (72130 ms)
+[17:37:13] pgc_id: 11, pgn: 1: pgc: 0x7f7ae00bdbf0
+[17:37:13] scan: vts=3, ttn=11, cells=0->1, blocks=193809->320217, 20026 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 13 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=193809->213828 (20020), 71130 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 14
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:02:07 (127020 ms)
+[17:37:13] pgc_id: 12, pgn: 1: pgc: 0x7f7ae00bdcd0
+[17:37:13] scan: vts=3, ttn=12, cells=0->1, blocks=213829->320217, 35448 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 14 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=213829->249270 (35442), 126020 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 15
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:02:46 (166200 ms)
+[17:37:13] pgc_id: 13, pgn: 1: pgc: 0x7f7ae00ef210
+[17:37:13] scan: vts=3, ttn=13, cells=0->1, blocks=249271->320217, 46522 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 15 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=249271->295786 (46516), 165200 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 16
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:01:28 (88080 ms)
+[17:37:13] pgc_id: 14, pgn: 1: pgc: 0x7f7ae00def40
+[17:37:13] scan: vts=3, ttn=14, cells=0->1, blocks=295787->320217, 24431 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 16 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=295787->320211 (24425), 87080 ms
+[17:37:13] scan: chap 2 c=1->1, b=320212->320217 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 17
+[17:37:13] scan: opening IFO for VTS 3
+[17:37:13] scan: duration is 00:19:03 (1143140 ms)
+[17:37:13] pgc_id: 15, pgn: 1: pgc: 0x7f7ae00ad1d0
+[17:37:13] scan: vts=3, ttn=15, cells=0->14, blocks=0->320217, 320218 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 17 has 15 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->14362 (14363), 51357 ms
+[17:37:13] scan: chap 2 c=1->1, b=14363->25987 (11625), 41136 ms
+[17:37:13] scan: chap 3 c=2->2, b=25988->71107 (45120), 160512 ms
+[17:37:13] scan: chap 4 c=3->3, b=71108->87898 (16791), 60184 ms
+[17:37:13] scan: chap 5 c=4->4, b=87899->97606 (9708), 34275 ms
+[17:37:13] scan: chap 6 c=5->5, b=97607->108273 (10667), 38237 ms
+[17:37:13] scan: chap 7 c=6->6, b=108274->125006 (16733), 59282 ms
+[17:37:13] scan: chap 8 c=7->7, b=125007->153946 (28940), 103437 ms
+[17:37:13] scan: chap 9 c=8->8, b=153947->179421 (25475), 90377 ms
+[17:37:13] scan: chap 10 c=9->9, b=179422->193808 (14387), 52521 ms
+[17:37:13] scan: chap 11 c=10->10, b=193809->213828 (20020), 71349 ms
+[17:37:13] scan: chap 12 c=11->11, b=213829->249270 (35442), 126408 ms
+[17:37:13] scan: chap 13 c=12->12, b=249271->295786 (46516), 165708 ms
+[17:37:13] scan: chap 14 c=13->13, b=295787->320211 (24425), 87348 ms
+[17:37:13] scan: chap 15 c=14->14, b=320212->320217 (6), 1003 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 18
+[17:37:13] scan: opening IFO for VTS 4
+[17:37:13] scan: duration is 00:02:30 (150010 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae009ccf0
+[17:37:13] scan: vts=4, ttn=1, cells=0->1, blocks=0->143719, 42252 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 18 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->42245 (42246), 149010 ms
+[17:37:13] scan: chap 2 c=1->1, b=143714->143719 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 19
+[17:37:13] scan: opening IFO for VTS 4
+[17:37:13] scan: duration is 00:01:46 (106020 ms)
+[17:37:13] pgc_id: 2, pgn: 1: pgc: 0x7f7ae00de990
+[17:37:13] scan: vts=4, ttn=2, cells=0->1, blocks=42246->143719, 29707 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 19 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=42246->71946 (29701), 105020 ms
+[17:37:13] scan: chap 2 c=1->1, b=143714->143719 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 20
+[17:37:13] scan: opening IFO for VTS 4
+[17:37:13] scan: duration is 00:00:43 (43160 ms)
+[17:37:13] pgc_id: 3, pgn: 1: pgc: 0x7f7ae00ce5c0
+[17:37:13] scan: vts=4, ttn=3, cells=0->1, blocks=71947->143719, 11866 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 20 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=71947->83806 (11860), 42160 ms
+[17:37:13] scan: chap 2 c=1->1, b=143714->143719 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 21
+[17:37:13] scan: opening IFO for VTS 4
+[17:37:13] scan: duration is 00:03:34 (214000 ms)
+[17:37:13] pgc_id: 4, pgn: 1: pgc: 0x7f7ae00ce520
+[17:37:13] scan: vts=4, ttn=4, cells=0->1, blocks=83807->143719, 59913 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 21 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=83807->143713 (59907), 213000 ms
+[17:37:13] scan: chap 2 c=1->1, b=143714->143719 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 22
+[17:37:13] scan: opening IFO for VTS 4
+[17:37:13] scan: duration is 00:08:31 (511360 ms)
+[17:37:13] pgc_id: 5, pgn: 1: pgc: 0x7f7ae00ce240
+[17:37:13] scan: vts=4, ttn=5, cells=0->4, blocks=0->143719, 143720 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 22 has 5 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->42245 (42246), 149351 ms
+[17:37:13] scan: chap 2 c=1->1, b=42246->71946 (29701), 105260 ms
+[17:37:13] scan: chap 3 c=2->2, b=71947->83806 (11860), 42256 ms
+[17:37:13] scan: chap 4 c=3->3, b=83807->143713 (59907), 213488 ms
+[17:37:13] scan: chap 5 c=4->4, b=143714->143719 (6), 1002 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 23
+[17:37:13] scan: opening IFO for VTS 5
+[17:37:13] scan: duration is 00:03:29 (209170 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae018fd40
+[17:37:13] scan: vts=5, ttn=1, cells=0->1, blocks=0->286032, 58239 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 23 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->58232 (58233), 208170 ms
+[17:37:13] scan: chap 2 c=1->1, b=286027->286032 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 24
+[17:37:13] scan: opening IFO for VTS 5
+[17:37:13] scan: duration is 00:05:20 (320210 ms)
+[17:37:13] pgc_id: 2, pgn: 1: pgc: 0x7f7ae018fe80
+[17:37:13] scan: vts=5, ttn=2, cells=0->1, blocks=58233->286032, 89406 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 24 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=58233->147632 (89400), 319210 ms
+[17:37:13] scan: chap 2 c=1->1, b=286027->286032 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 25
+[17:37:13] scan: opening IFO for VTS 5
+[17:37:13] scan: duration is 00:07:42 (462210 ms)
+[17:37:13] pgc_id: 3, pgn: 1: pgc: 0x7f7ae00de7b0
+[17:37:13] scan: vts=5, ttn=3, cells=0->1, blocks=147633->286032, 129146 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 25 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=147633->276772 (129140), 461210 ms
+[17:37:13] scan: chap 2 c=1->1, b=286027->286032 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 26
+[17:37:13] scan: opening IFO for VTS 5
+[17:37:13] scan: duration is 00:00:34 (34280 ms)
+[17:37:13] pgc_id: 4, pgn: 1: pgc: 0x7f7ae00ce1a0
+[17:37:13] scan: vts=5, ttn=4, cells=0->1, blocks=276773->286032, 9260 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 1
+[17:37:13] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[17:37:13] scan: checking subtitle 2
+[17:37:13] scan: id=0x21bd, lang=Deutsch, 3cc=deu ext=0
+[17:37:13] scan: checking subtitle 3
+[17:37:13] scan: id=0x22bd, lang=Magyar, 3cc=hun ext=0
+[17:37:13] scan: checking subtitle 4
+[17:37:13] scan: id=0x23bd, lang=Dansk, 3cc=dan ext=0
+[17:37:13] scan: checking subtitle 5
+[17:37:13] scan: id=0x24bd, lang=Suomi, 3cc=fin ext=0
+[17:37:13] scan: checking subtitle 6
+[17:37:13] scan: id=0x25bd, lang=Norsk, 3cc=nor ext=0
+[17:37:13] scan: checking subtitle 7
+[17:37:13] scan: id=0x26bd, lang=Svenska, 3cc=swe ext=0
+[17:37:13] scan: checking subtitle 8
+[17:37:13] scan: id=0x27bd, lang=Turkish, 3cc=tur ext=0
+[17:37:13] scan: title 26 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=276773->286026 (9254), 33280 ms
+[17:37:13] scan: chap 2 c=1->1, b=286027->286032 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 27
+[17:37:13] scan: opening IFO for VTS 6
+[17:37:13] scan: duration is 00:03:48 (228200 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae01a03a0
+[17:37:13] scan: vts=6, ttn=1, cells=0->1, blocks=0->62360, 62361 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: title 27 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->62354 (62355), 227200 ms
+[17:37:13] scan: chap 2 c=1->1, b=62355->62360 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 28
+[17:37:13] scan: opening IFO for VTS 7
+[17:37:13] scan: duration is 00:00:45 (45100 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae00ce380
+[17:37:13] scan: vts=7, ttn=1, cells=0->1, blocks=0->30460, 14524 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: title 28 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->14517 (14518), 44100 ms
+[17:37:13] scan: chap 2 c=1->1, b=30455->30460 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 29
+[17:37:13] scan: opening IFO for VTS 7
+[17:37:13] scan: duration is 00:00:50 (50200 ms)
+[17:37:13] pgc_id: 2, pgn: 1: pgc: 0x7f7ae01a0160
+[17:37:13] scan: vts=7, ttn=2, cells=0->1, blocks=14518->30460, 15943 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: title 29 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=14518->30454 (15937), 49200 ms
+[17:37:13] scan: chap 2 c=1->1, b=30455->30460 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 30
+[17:37:13] scan: opening IFO for VTS 8
+[17:37:13] scan: duration is 00:00:24 (24000 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae019ffc0
+[17:37:13] scan: vts=8, ttn=1, cells=0->1, blocks=0->9849, 9850 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: title 30 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->9843 (9844), 23000 ms
+[17:37:13] scan: chap 2 c=1->1, b=9844->9849 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+[17:37:13] scan: scanning title 31
+[17:37:13] scan: opening IFO for VTS 9
+[17:37:13] scan: duration is 00:00:14 (14020 ms)
+[17:37:13] pgc_id: 1, pgn: 1: pgc: 0x7f7ae01e4430
+[17:37:13] scan: vts=9, ttn=1, cells=0->1, blocks=0->6036, 6037 blocks
+[17:37:13] scan: checking audio 1
+[17:37:13] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[17:37:13] scan: title 31 has 2 chapters
+[17:37:13] scan: chap 1 c=0->0, b=0->6030 (6031), 13020 ms
+[17:37:13] scan: chap 2 c=1->1, b=6031->6036 (6), 1000 ms
+[17:37:13] scan: aspect = 1.77778
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+Scanning title 31 of 31, 50.00 %Scanning title 31 of 31, 50.00 %[17:37:14] scan: decoding previews for title 1
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:14] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:14] scan: decoding previews for title 2
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x83bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (Director's Commentary 1) (2.0 ch)
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=384000 English (AC3) (5.1 ch)
+[17:37:14] scan: audio 0x81bd: AC-3, rate=48000Hz, bitrate=384000 Deutsch (AC3) (5.1 ch)
+[17:37:14] scan: audio 0x82bd: AC-3, rate=48000Hz, bitrate=384000 Magyar (AC3) (5.1 ch)
+[17:37:14] scan: 10 previews, 720x576, 25.000 fps, autocrop = 12/12/0/0, aspect 16:9, PAR 64:45
+[17:37:14] scan: decoding previews for title 3
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:14] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:14] scan: decoding previews for title 4
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+Scanning title 4 of 31, preview 4, 55.48 %[17:37:14] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:14] scan: decoding previews for title 5
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:14] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:14] scan: decoding previews for title 6
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:14] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:14] scan: decoding previews for title 7
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:14] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:14] scan: decoding previews for title 8
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+Scanning title 8 of 31, preview 4, 61.94 %[17:37:14] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:14] scan: decoding previews for title 9
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:14] scan: title angle(s) 1
+[17:37:14] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] Title is likely interlaced or telecined (5 out of 10 previews). You should do something about that.
+[17:37:15] scan: decoding previews for title 10
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 11
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 12
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+Scanning title 12 of 31, preview 5, 68.55 %[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] Title is likely interlaced or telecined (5 out of 10 previews). You should do something about that.
+[17:37:15] scan: decoding previews for title 13
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 14
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 15
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 16
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+Scanning title 16 of 31, preview 6, 75.16 %[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 17
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 18
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] Title is likely interlaced or telecined (5 out of 10 previews). You should do something about that.
+[17:37:15] scan: decoding previews for title 19
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 20
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+Scanning title 20 of 31, preview 6, 81.61 %[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 21
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:15] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:15] scan: decoding previews for title 22
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:15] scan: title angle(s) 1
+[17:37:15] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:16] scan: decoding previews for title 23
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:16] scan: decoding previews for title 24
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+Scanning title 24 of 31, preview 6, 88.06 %[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:16] scan: decoding previews for title 25
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:16] scan: decoding previews for title 26
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:16] Title is likely interlaced or telecined (6 out of 10 previews). You should do something about that.
+[17:37:16] scan: decoding previews for title 27
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 4/4/0/0, aspect 16:9, PAR 64:45
+[17:37:16] scan: decoding previews for title 28
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+Scanning title 28 of 31, preview 7, 94.68 %[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 6/4/0/0, aspect 16:9, PAR 64:45
+[17:37:16] scan: decoding previews for title 29
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=192000 English (AC3) (2.0 ch)
+[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 8/8/0/0, aspect 16:9, PAR 64:45
+[17:37:16] scan: decoding previews for title 30
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=384000 English (AC3) (5.1 ch)
+[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 2/2/10/8, aspect 16:9, PAR 64:45
+[17:37:16] scan: decoding previews for title 31
+libdvdnav: DVD disk reports itself with Region mask 0x00e50000. Regions: 2 4 5
+[17:37:16] scan: title angle(s) 1
+[17:37:16] scan: audio 0x80bd: AC-3, rate=48000Hz, bitrate=448000 English (AC3) (5.1 ch)
+[17:37:16] scan: 10 previews, 720x576, 25.000 fps, autocrop = 0/4/0/0, aspect 16:9, PAR 64:45
+Scanning title 31 of 31, preview 10, 100.00 %[17:37:16] libhb: scan thread found 31 valid title(s)
++ title 1:
+  + vts 1, ttn 1, cells 0->1 (60624 blocks)
+  + duration: 00:03:36
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 60618 blocks, duration 00:03:35
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 2:
+  + Main Feature
+  + vts 2, ttn 1, cells 0->21 (2946702 blocks)
+  + duration: 02:07:31
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 12/12/0/0
+  + chapters:
+    + 1: cells 0->0, 207578 blocks, duration 00:08:50
+    + 2: cells 1->1, 181838 blocks, duration 00:07:30
+    + 3: cells 2->2, 134219 blocks, duration 00:05:47
+    + 4: cells 3->3, 163163 blocks, duration 00:06:56
+    + 5: cells 4->4, 130585 blocks, duration 00:05:39
+    + 6: cells 5->5, 169224 blocks, duration 00:07:13
+    + 7: cells 6->6, 149666 blocks, duration 00:06:28
+    + 8: cells 7->7, 112145 blocks, duration 00:04:51
+    + 9: cells 8->8, 222815 blocks, duration 00:09:38
+    + 10: cells 9->9, 174137 blocks, duration 00:07:33
+    + 11: cells 10->11, 122962 blocks, duration 00:05:35
+    + 12: cells 12->12, 114796 blocks, duration 00:04:47
+    + 13: cells 13->13, 149411 blocks, duration 00:06:36
+    + 14: cells 14->14, 121095 blocks, duration 00:05:19
+    + 15: cells 15->15, 159932 blocks, duration 00:06:43
+    + 16: cells 16->16, 131349 blocks, duration 00:05:44
+    + 17: cells 17->17, 99110 blocks, duration 00:04:25
+    + 18: cells 18->18, 180563 blocks, duration 00:07:49
+    + 19: cells 19->19, 128727 blocks, duration 00:05:36
+    + 20: cells 20->20, 93381 blocks, duration 00:04:29
+    + 21: cells 21->21, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (5.1 ch) (iso639-2: eng), 48000Hz, 384000bps
+    + 2, Deutsch (AC3) (5.1 ch) (iso639-2: deu), 48000Hz, 384000bps
+    + 3, Magyar (AC3) (5.1 ch) (iso639-2: hun), 48000Hz, 384000bps
+    + 4, English (AC3) (Director's Commentary 1) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
+    + 9, English (Director's Commentary) (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 10, Deutsch (Director's Commentary) (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 11, Magyar (Director's Commentary) (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 12, English (Director's Commentary) (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 13, Suomi (Director's Commentary) (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 14, Norsk (Director's Commentary) (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 15, Svenska (Director's Commentary) (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 16, Turkish (Director's Commentary) (iso639-2: tur) (Bitmap)(VOBSUB)
+    + 17, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 18, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
++ title 3:
+  + vts 3, ttn 1, cells 0->1 (14369 blocks)
+  + duration: 00:00:52
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 14363 blocks, duration 00:00:51
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 4:
+  + vts 3, ttn 2, cells 0->1 (11631 blocks)
+  + duration: 00:00:42
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 11625 blocks, duration 00:00:41
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 5:
+  + vts 3, ttn 3, cells 0->1 (45126 blocks)
+  + duration: 00:02:41
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 45120 blocks, duration 00:02:40
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 6:
+  + vts 3, ttn 4, cells 0->1 (16797 blocks)
+  + duration: 00:01:01
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 16791 blocks, duration 00:01:00
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 7:
+  + vts 3, ttn 5, cells 0->1 (9714 blocks)
+  + duration: 00:00:35
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 9708 blocks, duration 00:00:34
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 8:
+  + vts 3, ttn 6, cells 0->1 (10673 blocks)
+  + duration: 00:00:39
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 10667 blocks, duration 00:00:38
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 9:
+  + vts 3, ttn 7, cells 0->1 (16739 blocks)
+  + duration: 00:01:00
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 16733 blocks, duration 00:00:59
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
+  + combing detected, may be interlaced or telecined
++ title 10:
+  + vts 3, ttn 8, cells 0->1 (28946 blocks)
+  + duration: 00:01:44
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 28940 blocks, duration 00:01:43
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 11:
+  + vts 3, ttn 9, cells 0->1 (25481 blocks)
+  + duration: 00:01:31
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 25475 blocks, duration 00:01:30
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 12:
+  + vts 3, ttn 10, cells 0->1 (14393 blocks)
+  + duration: 00:00:53
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 14387 blocks, duration 00:00:52
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
+  + combing detected, may be interlaced or telecined
++ title 13:
+  + vts 3, ttn 11, cells 0->1 (20026 blocks)
+  + duration: 00:01:12
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 20020 blocks, duration 00:01:11
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 14:
+  + vts 3, ttn 12, cells 0->1 (35448 blocks)
+  + duration: 00:02:07
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 35442 blocks, duration 00:02:06
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 15:
+  + vts 3, ttn 13, cells 0->1 (46522 blocks)
+  + duration: 00:02:46
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 46516 blocks, duration 00:02:45
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 16:
+  + vts 3, ttn 14, cells 0->1 (24431 blocks)
+  + duration: 00:01:28
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 24425 blocks, duration 00:01:27
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 17:
+  + vts 3, ttn 15, cells 0->14 (320218 blocks)
+  + duration: 00:19:03
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 14363 blocks, duration 00:00:51
+    + 2: cells 1->1, 11625 blocks, duration 00:00:41
+    + 3: cells 2->2, 45120 blocks, duration 00:02:41
+    + 4: cells 3->3, 16791 blocks, duration 00:01:00
+    + 5: cells 4->4, 9708 blocks, duration 00:00:34
+    + 6: cells 5->5, 10667 blocks, duration 00:00:38
+    + 7: cells 6->6, 16733 blocks, duration 00:00:59
+    + 8: cells 7->7, 28940 blocks, duration 00:01:43
+    + 9: cells 8->8, 25475 blocks, duration 00:01:30
+    + 10: cells 9->9, 14387 blocks, duration 00:00:53
+    + 11: cells 10->10, 20020 blocks, duration 00:01:11
+    + 12: cells 11->11, 35442 blocks, duration 00:02:06
+    + 13: cells 12->12, 46516 blocks, duration 00:02:46
+    + 14: cells 13->13, 24425 blocks, duration 00:01:27
+    + 15: cells 14->14, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 18:
+  + vts 4, ttn 1, cells 0->1 (42252 blocks)
+  + duration: 00:02:30
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 42246 blocks, duration 00:02:29
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
+  + combing detected, may be interlaced or telecined
++ title 19:
+  + vts 4, ttn 2, cells 0->1 (29707 blocks)
+  + duration: 00:01:46
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 29701 blocks, duration 00:01:45
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 20:
+  + vts 4, ttn 3, cells 0->1 (11866 blocks)
+  + duration: 00:00:43
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 11860 blocks, duration 00:00:42
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 21:
+  + vts 4, ttn 4, cells 0->1 (59913 blocks)
+  + duration: 00:03:34
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 59907 blocks, duration 00:03:33
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 22:
+  + vts 4, ttn 5, cells 0->4 (143720 blocks)
+  + duration: 00:08:31
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 42246 blocks, duration 00:02:29
+    + 2: cells 1->1, 29701 blocks, duration 00:01:45
+    + 3: cells 2->2, 11860 blocks, duration 00:00:42
+    + 4: cells 3->3, 59907 blocks, duration 00:03:33
+    + 5: cells 4->4, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 23:
+  + vts 5, ttn 1, cells 0->1 (58239 blocks)
+  + duration: 00:03:29
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 58233 blocks, duration 00:03:28
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 24:
+  + vts 5, ttn 2, cells 0->1 (89406 blocks)
+  + duration: 00:05:20
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 89400 blocks, duration 00:05:19
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 25:
+  + vts 5, ttn 3, cells 0->1 (129146 blocks)
+  + duration: 00:07:42
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 129140 blocks, duration 00:07:41
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
++ title 26:
+  + vts 5, ttn 4, cells 0->1 (9260 blocks)
+  + duration: 00:00:34
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 9254 blocks, duration 00:00:33
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Deutsch (iso639-2: deu) (Bitmap)(VOBSUB)
+    + 3, Magyar (iso639-2: hun) (Bitmap)(VOBSUB)
+    + 4, Dansk (iso639-2: dan) (Bitmap)(VOBSUB)
+    + 5, Suomi (iso639-2: fin) (Bitmap)(VOBSUB)
+    + 6, Norsk (iso639-2: nor) (Bitmap)(VOBSUB)
+    + 7, Svenska (iso639-2: swe) (Bitmap)(VOBSUB)
+    + 8, Turkish (iso639-2: tur) (Bitmap)(VOBSUB)
+  + combing detected, may be interlaced or telecined
++ title 27:
+  + vts 6, ttn 1, cells 0->1 (62361 blocks)
+  + duration: 00:03:48
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 4/4/0/0
+  + chapters:
+    + 1: cells 0->0, 62355 blocks, duration 00:03:47
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
++ title 28:
+  + vts 7, ttn 1, cells 0->1 (14524 blocks)
+  + duration: 00:00:45
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 6/4/0/0
+  + chapters:
+    + 1: cells 0->0, 14518 blocks, duration 00:00:44
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
++ title 29:
+  + vts 7, ttn 2, cells 0->1 (15943 blocks)
+  + duration: 00:00:50
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 8/8/0/0
+  + chapters:
+    + 1: cells 0->0, 15937 blocks, duration 00:00:49
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (2.0 ch) (iso639-2: eng), 48000Hz, 192000bps
+  + subtitle tracks:
++ title 30:
+  + vts 8, ttn 1, cells 0->1 (9850 blocks)
+  + duration: 00:00:24
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 2/2/10/8
+  + chapters:
+    + 1: cells 0->0, 9844 blocks, duration 00:00:23
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (5.1 ch) (iso639-2: eng), 48000Hz, 384000bps
+  + subtitle tracks:
++ title 31:
+  + vts 9, ttn 1, cells 0->1 (6037 blocks)
+  + duration: 00:00:14
+  + size: 720x576, pixel aspect: 64/45, display aspect: 1.78, 25.000 fps
+  + autocrop: 0/4/0/0
+  + chapters:
+    + 1: cells 0->0, 6031 blocks, duration 00:00:13
+    + 2: cells 1->1, 6 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (5.1 ch) (iso639-2: eng), 48000Hz, 448000bps
+  + subtitle tracks:
+HandBrake has exited.
