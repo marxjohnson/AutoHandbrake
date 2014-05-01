@@ -110,8 +110,12 @@ class AutoHB
     end
 
     def scan_disc
-        f = File.open @options[:file] 
-        f.read
+	if @options[:file]
+	    f = File.open @options[:file] 
+	    f.read
+	else
+	    `HandBrakeCLI -i #{@options[:device]} -t 0 --scan 2>&1`
+	end
     end
 
     def parse_disc_title(line) 
