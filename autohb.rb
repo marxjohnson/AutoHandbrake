@@ -55,7 +55,7 @@ class AutoHB
 	       @options[:device] = device
 	    end	       
 	    opts.on('-o', "--output DIR", "Base directory for output files [Default: ~/Videos]") do |device|
-	       @options[:device] = device
+	       @options[:output] = device
 	    end	       
             opts.on('--file FILE', 'example input file') do |file|
                 @options[:file] = file
