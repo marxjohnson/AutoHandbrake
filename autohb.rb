@@ -377,7 +377,7 @@ class AutoHB
 	if lang == "scan"
 	    return lang
 	end
-	subtitles = @titles[@titles_to_rip.pop].subtitles
+	subtitles = @titles[@titles_to_rip.first].subtitles
 	subtitles.each do |subtitle|
 	    if subtitle.lang == lang
 		return subtitle.number
@@ -386,7 +386,7 @@ class AutoHB
     end
 
     def get_subtitles
-	subtitles = @titles[@titles_to_rip.pop.to_i].subtitles
+	subtitles = @titles[@titles_to_rip.first.to_i].subtitles
 	message = "The following subtitle tracks were found:\n"
 	default = nil
 	numbers = Array.new
