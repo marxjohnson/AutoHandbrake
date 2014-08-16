@@ -76,26 +76,26 @@ class AutoHB
 	    opts.on('-b', '--[no-]subtitles-burned', "Burn-in subtitles [default: true]") do |b|
 		@options[:subtitles_burned] = b
 	    end
-	    opts.on('-T', '--title', "Title for file naming (won't ask again)") do |title|
+	    opts.on('-T', '--title TITLE', "Title for file naming (won't ask again)") do |title|
 		@options[:title] = title
 	    end
-	    opts.on('-t', '--default-title', "Default title for file naming [default: read from disc]") do |title|
+	    opts.on('-t', '--default-title TITLE', "Default title for file naming [default: read from disc]") do |title|
 		@options[:default_title] = title
 	    end
-	    opts.on('-S', '--season', "Season number for file naming (won't ask again)") do |season|
+	    opts.on('-S', '--season NUMBER', "Season number for file naming (won't ask again)") do |season|
 		@options[:season] = season
 	    end
-	    opts.on('-s', '--default-season', "Default season number for file naming [default: read from disc or ask]") do |season|
+	    opts.on('-s', '--default-season NUMBER', "Default season number for file naming [default: read from disc or ask]") do |season|
 		@options[:default_season] = season
 	    end
-	    opts.on('-E', '--episode', "First episode number for file naming (won't ask again)") do |episode|
-		@options[:episode] = episode
+	    opts.on('-E', '--episode NUMBER', "First episode number for file naming (won't ask again)") do |episode|
+		@options[:first_episode] = episode
 	    end
-	    opts.on('-e', '--default-episode', "Default first episode number for file naming [default: 1]") do |episode|
+	    opts.on('-e', '--default-episode EPISODE', "Default first episode number for file naming [default: 1]") do |episode|
 		@options[:default_episode] = episode
 	    end
-	    opts.on('--preset PRESET', "Handbrake preset to use (list with `HandBrakeCLI -z`) [default: Normal]") do |episode|
-		@options[:default_episode] = episode
+	    opts.on('--preset PRESET', "Handbrake preset to use (list with `HandBrakeCLI -z`) [default: Normal]") do |preset|
+		@options[:preset] = preset
 	    end
 	    opts.on('--[no-]eject', "Eject disc when done [default: true]") do |eject|
 		@options[:eject] = eject
