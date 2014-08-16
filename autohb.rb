@@ -34,11 +34,14 @@ class AutoHB
 	@queue = Array.new
 
         self.parse_options
-	#self.verify_device
+	self.verify_device
     end
 
     def detect_device
 	@options[:device] = Dir["/dev/dvd*"].pop
+        if @options[:device].nil?
+            @options[:device] = Dir["/dev/cdrom*"].pop
+        end
     end
 
     def verify_device
