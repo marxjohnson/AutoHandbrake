@@ -456,6 +456,16 @@ class AutoHB
 	}
     end
 
+    def get_process_queue
+	message = "Process this command queue? [Y/n]"
+	a = ask(message) { |q|
+	    q.default = "Y"
+	    q.validate = /^[YyNn]+$/
+	    q.responses[:no_valid] = "Enter Y or N"
+	}
+	a.index(/^[nN]$/).nil?
+    end
+
     def main
         begin
             data = self.scan_disc
@@ -549,10 +559,18 @@ class AutoHB
 		command = "HandBrakeCLI -i #{@options[:device]} -o \"#{filename}\" --preset=\"#{@options[:preset]}\" -t #{title_number} #{subtitle}"
 		@queue.push command
 	    end
-	    # Run Commands, yay!
+            puts "Command Queue Created:"
 	    @queue.each do |command|
 		puts command
 	    end
+            if get_process_queue
+                @queue.each do |command|
+                    system command
+                end
+            else
+                puts "Queue not processed, exiting"
+            end
+	    # Run Commands, yay!
         end
     end
 end
