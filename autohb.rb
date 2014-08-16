@@ -21,7 +21,8 @@ class AutoHB
 	    :first_episode => nil,
 	    :default_first_episode => "1",
 	    :eject => true,
-	    :preset => "Normal"
+	    :preset => "Normal",
+            :min_duration => nil
 	}
 	self.detect_device
         @curTitle = Title.new
@@ -99,6 +100,9 @@ class AutoHB
 	    opts.on('--[no-]eject', "Eject disc when done [default: true]") do |eject|
 		@options[:eject] = eject
 	    end
+	    opts.on('-m', '--min-duration [DURATION]', "Min duration") do |duration|
+		@options[:min_duration] = duration
+	    end
         end
 
         optparse.parse!
@@ -117,7 +121,11 @@ class AutoHB
 	    f = File.open @options[:file] 
 	    f.read
 	else
-	    `HandBrakeCLI -i #{@options[:device]} -t 0 --scan 2>&1`
+            min_duration = ""
+            if @options[:min_duration]
+                min_duration = " --min-duration #{@options[:min_duration]}"
+            end
+	    `HandBrakeCLI -i #{@options[:device]}#{min_duration} -t 0 --scan 2>&1`
 	end
     end
 
