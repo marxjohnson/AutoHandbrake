@@ -242,7 +242,7 @@ class AutoHB
                     cumulative = duration
                     group = Array[Hash[:number => number, :duration => duration]]
                 else
-                    if duration < group[0][:duration]-episode_threshold
+                    if !group.empty? and duration < group[0][:duration]-episode_threshold
 			self.push_group cumulative, mainduration, total_threshold, group
                         group = Array.new
                         cumulative = Duration.new
