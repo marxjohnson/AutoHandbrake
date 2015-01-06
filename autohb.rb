@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'optparse'
-require 'awesome_print'
 require 'duration'
 require 'highline/import'
 
@@ -253,7 +252,6 @@ class AutoHB
             end
         end
 	self.push_group cumulative, mainduration, total_threshold, group
-        ap @episode_groups
     end
 
     def push_group cumulative, maintime, total_threshold, group
