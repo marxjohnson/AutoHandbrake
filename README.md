@@ -14,6 +14,10 @@ group as a set of sequentially-numbered episodes, otherwise it will offer to rip
 feature.  If detection is unsuccessful or incorrect, the user can override the titles to be
 ripped.
 
+    Requirements:
+        Ruby >= 2
+        Ruby gems: optparse, duration, highline/import 
+
     Usage: autohb [options]
         -i, --input DEVICE               Input device (DVD or Blu-Ray drive) [Default: detect]
         -o, --output DIR                 Base directory for output files [Default: ~/Videos]
@@ -32,3 +36,11 @@ ripped.
             --[no-]eject                 Eject disc when done [default: true]
         -m, --min-duration [DURATION]    Min duration
 
+    Examples:
+        autohb.rb # Scan all titles on the default device (/dev/dvd or /dev/cdrom and prompt for all questions)
+        autohb.rb -i /dev/sr0 -o /mnt/media -m 240 # Scan all titles over 240 seconds (4 minutes) from /dev/sr0,
+            # output files to /mnt/media, prompt for all questions.
+        autohb.rb -T "The Simpsons" -S 5 -E 4 # Pre-set the first episode file name to "The Simpsons S05E04" and 
+            # name the remaining episodes sequentially, skipping these questions in the wizard.
+        autohb.rb -t "The Simpsons" -s 5 -e 4 # Default the first episode file name to "The Simpsons S05E04" and 
+            # name the remaining episodes sequentially, but allow these to be overridden in the wizard.
