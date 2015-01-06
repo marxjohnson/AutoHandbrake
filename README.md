@@ -7,7 +7,7 @@ Scans DEVICE for titles and subtitles, attempts to detect groups of episodes, th
 and executes HandBrakeCLI commands based on command-line arugments or answers to interactive
 prompts.
 
-When scanning, any titles shorter than DURATION (is specified) will be ignored.  The script
+When scanning, any titles shorter than DURATION (if specified) will be ignored.  The script
 will look at the remaining titles and attempt to find a group of sequential, similar-length 
 titles matching the length of the DVD's main feature.  If found, it will offer to rip this
 group as a set of sequentially-numbered episodes, otherwise it will offer to rip the main
@@ -15,6 +15,7 @@ feature.  If detection is unsuccessful or incorrect, the user can override the t
 ripped.
 
     Requirements:
+        HandBrakeCLI
         Ruby >= 2
         Ruby gems: optparse, duration, highline/import 
 
