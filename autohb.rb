@@ -255,8 +255,13 @@ class AutoHB
     end
 
     def push_group cumulative, maintime, total_threshold, group
-        if cumulative >= maintime-total_threshold and cumulative <= maintime+total_threshold
-            @episode_groups.push group.sort {|a,b| a[:number] <=> b[:number]}
+        begin
+            if cumulative >= maintime-total_threshold and cumulative <= maintime+total_threshold
+                @episode_groups.push group.sort {|a,b| a[:number] <=> b[:number]}
+            end
+        rescue NoMethodError
+            puts "Could not find titles, probably due to an error reading the disc. Try cleaning the disc or check your optical drive. If the problem persists, you can debug further by running `HandBrakeCLI -i /dev/cdrom -t 0` and analysing the output."
+            exit
         end
     end
 
