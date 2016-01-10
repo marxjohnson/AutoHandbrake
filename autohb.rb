@@ -2,7 +2,7 @@
 
 require 'optparse'
 require 'duration'
-require 'highline/import'
+require 'mattscilipoti-rdialog'
 
 class AutoHB 
     def initialize
@@ -32,6 +32,11 @@ class AutoHB
 	@titles_to_rip = Array.new
 	@subtitle_to_rip = nil
 	@queue = Array.new
+        @dialog = RDialog.new
+        if File.exist? '/usr/bin/gdialog'
+            @dialog.path_to_dialog = '/usr/bin/gdialog'
+        end
+        @dialog.backtitle = "Auto Handbrake"
 
         self.parse_options
 	self.verify_device
@@ -266,35 +271,25 @@ class AutoHB
     end
 
     def confirm_episode_group group
-	message = "One Episde Group Found:\n"
+	message = "One Episode Group Found:\n"
 	message += self.get_group_listing group
-	message += "Rip these titles? [Y/n]:"
-	a = ask(message) do |q| 
-	    q.default = "Y"
-	    q.validate = /^[YNyn]$/
-	    q.responses[:not_valid] = "Enter Y or N "
-	end
-	a.index(/^[nN]$/).nil?
+	message += "Rip these titles?"
+        @dialog.yesno message
     end
 
     def select_episode_group
-	message = "Multiple possible episode groups found:\n"
+	message = "Multiple possible episode groups found.\n"
+	message += "Which group do you want to rip? (Cancel for none)\n"
+        groups = Array.new
 	@episode_groups.each do |index,group|
-	    message += "Group #{index}:\n"
-	    message += self.get_group_listing group
+            groups.push [index.to_s, self.get_group_listing(group)]
 	end
-	options = @episode_groups.each_index {|x| x}
-	message += "Which group do you want to rip? (n for none) [#{options}]\n"
-	a = ask(message) do |q|
-	    q.default = 0
-	    q.validate = /^[#{options}nN]$/
-	    q.responses[:not_valid] = "Enter #{options.split("").join(",")} or N "
-	end
-	if a.index(/^[nN]$/).nil?
-	    return a.to_i
-	else
-	    return nil
-	end
+        answer = @dialog.radiolist groups
+        if answer
+            return answer
+        else
+            return nil
+        end
     end
 
     def get_group_listing group
@@ -318,13 +313,8 @@ class AutoHB
 	maintime = @titles[@main.to_i].duration
 	message = "Single main feature found:\n"
 	message += "Title #{@main} [#{maintime}]\n"
-	message += "Rip this feature? [Y/n]"
-	a = ask(message) do |q|
-	    q.default = "Y"
-	    q.validate = /^[YyNn]$/
-	    q.responses[:not_valid] = "Enter Y or N"
-	end
-	a.index(/^[nN]$/).nil?
+	message += "Rip this feature?"
+        @dialog.yesno message
     end
 
     def rip_episode_group group
@@ -338,38 +328,34 @@ class AutoHB
     end
 
     def select_titles
-	message = "No titles selected. The following titles were found:\n"
+	message = "No titles selected. The following titles were found.\nSelect the titles you wish to rip."
 	numbers = Array.new
 	@titles.each do |title|
 	    if !title.nil?
-		message += self.get_title_listing title.number, title.duration
-		numbers.push title.number
+                numbers.push [' '+title.number, self.get_title_listing(title.number, title.duration)]
 	    end
 	end
-	message += "Enter the title numbers to rip, separated by commas (e.g. enter \"2,3,5\" for titles 2, 3 and 5), or q to quit\n"
-	a = ask(message) do |q|
-	    q.validate = /^(q|((#{numbers.join "|"}),?)+)$/ 
-	    q.responses[:not_valid] = "Enter a list of numbers from #{numbers.join ","} or q"
-	end
-	if a == "q"
-	    exit
-	else
-	    @titles_to_rip = a.split ","
-	end
+        begin
+            answer = @dialog.checklist message, numbers
+	    if answer == false
+	        exit
+	    else
+                answer.each do |title| title.lstrip! end
+                puts answer
+	        @titles_to_rip = answer
+	    end
+        rescue
+            exit
+        end
     end
 
     def add_subtitles?
-	message = "Add subtitles with default settings? (Y/n)\n"
+	message = "Add subtitles with default settings?\n"
 	lang = @options[:default_subtitles]
 	forced = @options[:subtitles_forced] ? "yes" : "no"
 	burned = @options[:subtitles_burned] ? "yes" : "no"
 	message += "(Language #{lang}, Forced Only: #{forced}, Burned in: #{burned}) \n"
-	a = ask(message) do |q|
-	    q.validate = /^[YyNn]$/
-	    q.default = "y"
-	    q.responses[:not_valid] = "Enter Y or N"
-	end
-	if a.index(/^[nN]$/).nil?
+	if @dialog.yesno message
 	    @subtitle_to_rip = "scan -N #{@options[:default_subtitles]}"
 	else
 	    return false
@@ -390,36 +376,25 @@ class AutoHB
 
     def get_subtitles
 	subtitles = @titles[@titles_to_rip.first.to_i].subtitles
-	message = "The following subtitle tracks were found:\n"
+	message = "The following subtitle tracks were found,\n"
 	default = nil
 	numbers = Array.new
 	subtitles.each do |subtitle|
 	    if subtitle.nil?
 	      next
 	    end
-	    message += "#{subtitle.number}: #{subtitle.lang}\n"
 	    if default.nil? and subtitle.lang == @options[:default_subtitle]
 		default = subtitle.number
 	    end
-	    numbers.push subtitle.number
+	    numbers.push [' ' + subtitle.number.to_s, subtitle.lang, default == subtitle.number]
 	end
-	message += "Enter the number of the track you want to rip (n for none)"
-	if !default.nil?
-	    message += " [default: #{default}]"
-	end
-	message += ":\n"
-	a = ask(message) do |q|
-	    if !default.nil?
-		q.default = default
-	    end
-	    q.validate = /^([nN]|(#{numbers.join "|"}))$/ 
-	    q.responses[:not_valid] = "Enter a numbers from #{numbers.join ","} or N"
-	end
-	if a.index(/^[nN]$/).nil?
-	    return a
-	else
-	    return nil
-	end
+	message += "select the track you want to rip."
+        begin
+            answer = @dialog.radiolist message, numbers
+            return answer.strip.to_s
+        rescue
+            exit
+        end
     end
 
     def get_title
@@ -428,45 +403,88 @@ class AutoHB
 	else
 	    default = @options[:default_title]
 	end
-	message = "Enter the title for file and folder naming"
-	ask(message) do |q|
-	    q.default = default
-	    q.validate = /^[A-Za-z_0-9][A-Za-z_0-9\-. ]*$/
-	    q.responses[:not_valid] = "Enter a valid filename (Letters, numbers, _ - or ., not starting with - or .)"
-	end
+	message = "Enter the title for file and folder naming."
+        invalid = " Enter a valid filename (Letters, numbers, _ - or ., not starting with - or .)"
+        
+        valid = nil
+        while valid != true do
+            question = message
+            if valid == false
+                question += invalid
+            end
+            answer = @dialog.inputbox(question, 0, 0, "\"#{default}\"")
+	    validation = /^[A-Za-z_0-9][A-Za-z_0-9\-. ]*$/.match answer
+            if !validation.nil?
+                valid = true
+		answer = answer.strip()
+            else
+                valid = false
+                default = answer
+            end
+        end
+        return answer
     end
 
     def get_season
-	message = "Enter season number for episode naming (n for none)"
-	a = ask(message) do |q|
-	    q.default = @options[:default_season]
-	    q.validate = /^([0-9]+|[nN])$/
-	    q.responses[:not_valid] = "Enter a number, or N for none"
+	message = "Enter season number for episode naming (Leave blank for none)."
+        invalid = "\nPlease enter numbers only"
+        default = @options[:default_season]
+	if default.nil?
+	    default = ''
 	end
-	if a.index(/^[nN]$/).nil?
-	    return a
-	else
-	    return nil
-	end
+        
+        valid = nil
+        while valid != true do
+            question = message
+            if valid == false
+                question += invalid
+            end
+	    begin
+		answer = @dialog.inputbox(message, 0, 0, default)
+		validation = /^[0-9]*$/.match answer
+		if !validation.nil?
+		    valid = true
+		    answer = answer.to_i
+		else
+		    valid = false
+		    default = answer
+		end
+	    rescue
+		answer = ''
+	    end
+        end
+        return answer
     end
 
     def get_first_episode
 	message = "Enter first episode number for episode naming"
-	a = ask(message) { |q|
-	    q.default = @options[:default_first_episode]
-	    q.validate = /^[0-9]+$/
-	    q.responses[:no_valid] = "Enter a number"
-	}
-    end
-
-    def get_process_queue
-	message = "Process this command queue? [Y/n]"
-	a = ask(message) { |q|
-	    q.default = "Y"
-	    q.validate = /^[YyNn]+$/
-	    q.responses[:no_valid] = "Enter Y or N"
-	}
-	a.index(/^[nN]$/).nil?
+        invalid = "\nPlease enter a number"
+        default = @options[:default_first_episode]
+	if default.nil?
+	    default = ''
+	end
+        
+        valid = nil
+        while valid != true do
+            question = message
+            if valid == false
+                question += invalid
+            end
+	    begin
+		answer = @dialog.inputbox(message, 0, 0, default)
+		validation = /^[0-9]+$/.match answer
+		if !validation.nil?
+		    valid = true
+		    answer = answer.to_i
+		else
+		    valid = false
+		    default = answer
+		end
+	    rescue
+		answer = ''
+	    end
+        end
+        return answer
     end
 
     def main
@@ -562,18 +580,19 @@ class AutoHB
 		command = "HandBrakeCLI -i #{@options[:device]} -o \"#{filename}\" --preset=\"#{@options[:preset]}\" -t #{title_number} #{subtitle}"
 		@queue.push command
 	    end
-            puts "Command Queue Created:"
-	    @queue.each do |command|
-		puts command
-	    end
-            if get_process_queue
+
+            commandqueue = "Command Queue Created:\n"
+            commandqueue += @queue.join("\n")
+	    commandqueue += "\n\nProcess this command queue?"
+            if @dialog.yesno commandqueue.gsub('"', '\"'), @queue.length + 8, 80
+                # Run Commands, yay!
                 @queue.each do |command|
                     system command
                 end
             else
-                puts "Queue not processed, exiting"
+                @dialog.msgbox "Queue not processed, exiting"
             end
-	    # Run Commands, yay!
+            system "clear" or system "cls"
         end
     end
 end
