@@ -51,7 +51,7 @@ class AutoHB
 
     def verify_device
 	if @options[:device].nil?
-	    puts "No DVD drive was found, and none specified. Exiting."
+	    @dialog.msgbox "No DVD drive was found, and none specified. Exiting."
 	    exit
 	end
     end
@@ -265,7 +265,7 @@ class AutoHB
                 @episode_groups.push group.sort {|a,b| a[:number] <=> b[:number]}
             end
         rescue NoMethodError
-            puts "Could not find titles, probably due to an error reading the disc. Try cleaning the disc or check your optical drive. If the problem persists, you can debug further by running `HandBrakeCLI -i /dev/cdrom -t 0` and analysing the output."
+            @dialog.msgbox "Could not find titles, probably due to an error reading the disc. Try cleaning the disc or check your optical drive. If the problem persists, you can debug further by running `HandBrakeCLI -i /dev/cdrom -t 0` and analysing the output."
             exit
         end
     end
@@ -341,7 +341,6 @@ class AutoHB
 	        exit
 	    else
                 answer.each do |title| title.lstrip! end
-                puts answer
 	        @titles_to_rip = answer
 	    end
         rescue
@@ -522,7 +521,7 @@ class AutoHB
 	    end
 
 	    if @titles_to_rip.length == 0
-		puts "No titles selected, exiting\n"
+		@dialog msgbox "No titles selected, exiting\n"
 		exit
 	    end
 
