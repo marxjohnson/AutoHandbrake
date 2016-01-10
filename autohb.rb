@@ -521,7 +521,7 @@ class AutoHB
 	    end
 
 	    if @titles_to_rip.length == 0
-		@dialog msgbox "No titles selected, exiting\n"
+		@dialog.msgbox "No titles selected, exiting\n"
 		exit
 	    end
 
