@@ -17,7 +17,7 @@ ripped.
     Requirements:
         HandBrakeCLI
         Ruby >= 2
-        Ruby gems: optparse, duration, highline/import 
+        Ruby gems: optparse, duration, mattscilipoti-rdialog
 
     Usage: autohb [options]
         -i, --input DEVICE               Input device (DVD or Blu-Ray drive) [Default: detect]
