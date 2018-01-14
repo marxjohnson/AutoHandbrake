@@ -21,7 +21,8 @@ class AutoHB
 	    :default_first_episode => "1",
 	    :eject => true,
 	    :preset => "Normal",
-            :min_duration => nil
+            :min_duration => nil,
+            :extension => "mp4"
 	}
 	self.detect_device
         @curTitle = Title.new
@@ -107,6 +108,9 @@ class AutoHB
 	    opts.on('-m', '--min-duration [DURATION]', "Min duration") do |duration|
 		@options[:min_duration] = duration
 	    end
+            opts.on('--extension EXTENSION', "File extension for output file [default: mp4]") do |extension|
+                @options[:extension] = extension
+            end
         end
 
         optparse.parse!
@@ -265,7 +269,7 @@ class AutoHB
                 @episode_groups.push group.sort {|a,b| a[:number] <=> b[:number]}
             end
         rescue NoMethodError
-            @dialog.msgbox "Could not find titles, probably due to an error reading the disc. Try cleaning the disc or check your optical drive. If the problem persists, you can debug further by running `HandBrakeCLI -i /dev/cdrom -t 0` and analysing the output."
+            @dialog.msgbox "Could not find titles, probably due to an error reading the disc. Try cleaning the disc or check your optical drive. If the problem persists, you can debug further by running 'HandBrakeCLI -i /dev/cdrom -t 0' and analysing the output."
             exit
         end
     end
@@ -575,7 +579,7 @@ class AutoHB
 		if !File.exists? folder_name
 		    Dir.mkdir folder_name
 		end
-		filename = "#{folder_name}/#{@options[:title]}#{episode}.mp4"
+		filename = "#{folder_name}/#{@options[:title]}#{episode}.#{@options[:extension]}"
 		command = "HandBrakeCLI -i #{@options[:device]} -o \"#{filename}\" --preset=\"#{@options[:preset]}\" -t #{title_number} #{subtitle}"
 		@queue.push command
 	    end
@@ -590,6 +594,9 @@ class AutoHB
                 end
             else
                 @dialog.msgbox "Queue not processed, exiting"
+            end
+            if @options[:eject]
+                system "eject #{@options[:device]}"
             end
             system "clear" or system "cls"
         end
