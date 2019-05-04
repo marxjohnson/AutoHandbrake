@@ -3,6 +3,7 @@
 require 'optparse'
 require 'duration'
 require 'mattscilipoti-rdialog'
+require 'pp'
 
 class AutoHB 
     def initialize
@@ -232,14 +233,23 @@ class AutoHB
         total_threshold = 20
         @episode_groups = Array.new
         group = nil
+        longest_title = nil
         @titles.each do |title|
             if !title.nil?
                 if title.ismain
                     @main = title.number
                     mainduration = title.duration
+                else
+                    if title.duration > durations[longest_title]
+                        longest_title = title.number
+                    end
                 end
                 durations[title.number] = title.duration
             end
+        end
+        if @main.nil?
+            @main = longest_title
+            mainduration = durations[@main]
         end
         durations = durations.sort {|a,b|
           b[1] <=> a[1] 
