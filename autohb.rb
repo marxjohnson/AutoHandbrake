@@ -295,10 +295,10 @@ class AutoHB
 	message = "Multiple possible episode groups found.\n"
 	message += "Which group do you want to rip? (Cancel for none)\n"
         groups = Array.new
-	@episode_groups.each do |index,group|
+	@episode_groups.each_with_index do |group,index|
             groups.push [index.to_s, self.get_group_listing(group)]
 	end
-        answer = @dialog.radiolist groups
+        answer = @dialog.radiolist message, groups
         if answer
             return answer
         else
@@ -309,17 +309,17 @@ class AutoHB
     def get_group_listing group
 	listing = ""
 	group.each do |episode|
-	    listing += self.get_title_listing episode[:number], episode[:duration]
+	    listing += self.get_title_listing episode[:number], episode[:duration], ","
 	end
 	listing
     end
 
-    def get_title_listing number, duration
+    def get_title_listing number, duration, separator = "\n"
 	ismain = ""
 	if number == @main
 	    ismain = "(Main Feature)"
 	end
-	"Title #{number} [%02d:%02d:%02d] #{ismain}\n" % [duration.hours, duration.minutes, duration.seconds]
+	"Title #{number} [%02d:%02d:%02d] #{ismain}#{separator}" % [duration.hours, duration.minutes, duration.seconds]
     end
     	
 
@@ -508,7 +508,7 @@ class AutoHB
             if @episode_groups.length > 0
                 if @episode_groups.length > 1
                     # Display groups and prompt for choice
-		    group = self.select_episode_group
+		    group = @episode_groups[self.select_episode_group.to_i]
 		    if group.nil?
 			if self.confirm_main_title
 			    self.rip_main_title
