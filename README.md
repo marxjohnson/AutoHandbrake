@@ -33,10 +33,12 @@ ripped.
         -s, --default-season NUMBER      Default season number for file naming [default: read from disc or ask]
         -E, --episode NUMBER             First episode number for file naming (won't ask again)
         -e, --default-episode EPISODE    Default first episode number for file naming [default: 1]
-            --preset PRESET              Handbrake preset to use (list with `HandBrakeCLI -z`) [default: Normal]
+            --preset PRESET              Handbrake preset to use (list with `HandBrakeCLI -z`), 
+                                         or custom preset exported from Handbrake GUI as a JSON file [default: Normal]
             --[no-]eject                 Eject disc when done [default: true]
         -m, --min-duration [DURATION]    Min duration
-
+            --extension EXTENSION        File extension for output file [default: mp4]
+ 
     Examples:
         autohb.rb # Scan all titles on the default device (/dev/dvd or /dev/cdrom and prompt for all questions)
         autohb.rb -i /dev/sr0 -o /mnt/media -m 240 # Scan all titles over 240 seconds (4 minutes) from /dev/sr0,

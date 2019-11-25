@@ -3,6 +3,7 @@
 require 'optparse'
 require 'duration'
 require 'mattscilipoti-rdialog'
+
 require 'pp'
 
 class AutoHB 
@@ -100,7 +101,7 @@ class AutoHB
 	    opts.on('-e', '--default-episode EPISODE', "Default first episode number for file naming [default: 1]") do |episode|
 		@options[:default_episode] = episode
 	    end
-	    opts.on('--preset PRESET', "Handbrake preset to use (list with `HandBrakeCLI -z`) [default: Normal]") do |preset|
+	    opts.on('--preset PRESET', "Handbrake preset to use (list with `HandBrakeCLI -z`), or custom preset exported from Handbrake GUI as a JSON file [default: Normal]") do |preset|
 		@options[:preset] = preset
 	    end
 	    opts.on('--[no-]eject', "Eject disc when done [default: true]") do |eject|
@@ -590,7 +591,12 @@ class AutoHB
 		    Dir.mkdir folder_name
 		end
 		filename = "#{folder_name}/#{@options[:title]}#{episode}.#{@options[:extension]}"
-		command = "HandBrakeCLI -i #{@options[:device]} -o \"#{filename}\" --preset=\"#{@options[:preset]}\" -t #{title_number} #{subtitle}"
+                if @options[:preset].end_with? ".json"
+                    preset = "--preset-import-file \"#{@options[:preset]}\" --preset=\"#{File.basename(@options[:preset], ".json")}\""
+                elsif
+                    preset = "--preset=\"#{@options[:preset]}\""
+                end
+		command = "HandBrakeCLI -i #{@options[:device]} -o \"#{filename}\" #{preset} -t #{title_number} #{subtitle}"
 		@queue.push command
 	    end
 
