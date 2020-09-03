@@ -161,7 +161,7 @@ class AutoHB
     end
 
     def parse_duration(duration)
-        parts = duration.split ':'
+        parts = duration.to_s.split ':'
 	Duration.new :hours => parts[0].to_i, :minutes => parts[1].to_i, :seconds => parts[2].to_i
     end
 
