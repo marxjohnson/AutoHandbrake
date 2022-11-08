@@ -42,7 +42,11 @@ class AutoHB
         @dialog.backtitle = "Auto Handbrake"
 
         self.parse_options
-	self.verify_device
+        if @options[:directory].nil?
+            self.verify_device
+        else
+            self.verify_directory
+        end
     end
 
     def detect_device
@@ -57,6 +61,28 @@ class AutoHB
 	    @dialog.msgbox "No DVD drive was found, and none specified. Exiting."
 	    exit
 	end
+
+    def verify_directory
+        if !Dir.exist? @options[:directory]
+            @dialog.msgbox "Specified directory was not found."
+            exit
+        end
+        files = Array.new
+        Dir.new(@options[:directory]).each do |filename|
+            path = @options[:directory] + '/' + filename
+            if File.file?(path) && File.readable?(path)
+                mime_type = `file --mime -b "#{path}"`.chomp
+                if mime_type.start_with? 'video/'
+                    files.push filename
+                end
+            end
+        end
+
+        if files.empty?
+            @dialog.msgbox "No videos found in directory. Exiting."
+        end
+
+        @files = files
     end
 
     def parse_options
@@ -110,6 +136,9 @@ class AutoHB
 	    opts.on('-m', '--min-duration [DURATION]', "Min duration") do |duration|
 		@options[:min_duration] = duration
 	    end
+            opts.on('-d', "--directory DIR", "Input directory containing videos to convert") do |directory|
+                @options[:directory] = directory
+            end
             opts.on('--extension EXTENSION', "File extension for output file [default: mp4]") do |extension|
                 @options[:extension] = extension
             end
@@ -503,26 +532,50 @@ class AutoHB
 
     def main
         begin
-            data = self.scan_disc
-            self.parse_output data
-            self.find_episode_groups
-            if @episode_groups.length > 0
-                if @episode_groups.length > 1
-                    # Display groups and prompt for choice
-		    group = @episode_groups[self.select_episode_group.to_i]
-		    if group.nil?
-			if self.confirm_main_title
-			    self.rip_main_title
-			end
-		    else
-			self.rip_episode_group group
-		    end 
+            if @files == nil
+                data = self.scan @options[:device]
+                self.parse_output data
+
+                self.find_episode_groups
+                if @episode_groups.length > 0
+                    if @episode_groups.length > 1
+                        # Display groups and prompt for choice
+                        group = @episode_groups[self.select_episode_group.to_i]
+                        if group.nil?
+                            if self.confirm_main_title
+                                self.rip_main_title
+                            end
+                        else
+                            self.rip_episode_group group
+                        end
+                    else
+                        # Display group and confirm
+                        group = @episode_groups.pop
+                        if self.confirm_episode_group group
+                            self.rip_episode_group group
+                        end
+                    end
                 else
-                    # Display group and confirm
-		    group = @episode_groups.pop
-		    if self.confirm_episode_group group
-			self.rip_episode_group group
-		    end
+                    # Display main title and confirm
+                    if self.confirm_main_title
+                        self.rip_main_title
+                    end
+                end
+
+                if @titles_to_rip.length == 0
+                    self.select_titles
+                end
+
+                if @titles_to_rip.length == 0
+                    @dialog.msgbox "No titles selected, exiting\n"
+                    exit
+                end
+
+            else
+                path = @options[:directory] + '/' + @files[0]
+                data = self.scan path
+                self.parse_output data
+            end
                 end
             else
                 # Display main title and confirm

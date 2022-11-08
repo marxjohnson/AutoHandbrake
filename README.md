@@ -1,7 +1,10 @@
 AutoHandbrake
 =============
 
-A command-line wizard to speed up ripping DVDs with HandBrakeCLI.
+A command-line wizard to speed up ripping DVDs and converting videos with HandBrakeCLI.
+
+Can operate on a DVD in drive DEVICE, or a directory DIR containing titles ripped from
+a DVD or Blu-Ray, for example by MakeMKV.
 
 Scans DEVICE for titles and subtitles, attempts to detect groups of episodes, then creates
 and executes HandBrakeCLI commands based on command-line arugments or answers to interactive
@@ -21,6 +24,7 @@ ripped.
 
     Usage: autohb [options]
         -i, --input DEVICE               Input device (DVD or Blu-Ray drive) [Default: detect]
+        -d, --directory DIR              Input directory containing video files for conversion. Overrides -i.
         -o, --output DIR                 Base directory for output files [Default: ~/Videos]
             --file FILE                  example input file
             --subtitles LANG             Subtitle language (3 letter code, don't ask agaain)
@@ -47,3 +51,5 @@ ripped.
             # name the remaining episodes sequentially, skipping these questions in the wizard.
         autohb.rb -t "The Simpsons" -s 5 -e 4 # Default the first episode file name to "The Simpsons S05E04" and 
             # name the remaining episodes sequentially, but allow these to be overridden in the wizard.
+        autohb.rb -d "/Videos/The Simpsons Season 1 Disc 1"
+            # instead of scanning a disc, scan the given directory for video files to convert.
