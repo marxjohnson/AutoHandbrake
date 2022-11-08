@@ -26,7 +26,7 @@ ripped.
         -i, --input DEVICE               Input device (DVD or Blu-Ray drive) [Default: detect]
         -d, --directory DIR              Input directory containing video files for conversion. Overrides -i.
         -o, --output DIR                 Base directory for output files [Default: ~/Videos]
-            --file FILE                  example input file
+            --file FILE                  example input file (testing only)
             --subtitles LANG             Subtitle language (3 letter code, don't ask agaain)
             --default-subtitles LANG     Subtitle language (3 letter code) [default: eng]
         -f, --[no-]subtitles-forced      Only include forced subtitles [default: true]
@@ -42,7 +42,8 @@ ripped.
             --[no-]eject                 Eject disc when done [default: true]
         -m, --min-duration [DURATION]    Min duration
             --extension EXTENSION        File extension for output file [default: mp4]
- 
+            --no-flatpak                 Don't use the Flatpak version of HandBrakeCLI, even if it is installed
+
     Examples:
         autohb.rb # Scan all titles on the default device (/dev/dvd or /dev/cdrom and prompt for all questions)
         autohb.rb -i /dev/sr0 -o /mnt/media -m 240 # Scan all titles over 240 seconds (4 minutes) from /dev/sr0,

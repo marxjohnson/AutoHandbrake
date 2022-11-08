@@ -24,6 +24,7 @@ class AutoHB
             :preset => "Normal",
             :min_duration => nil,
             :extension => "mp4",
+            :no_flatpak => false
         }
         self.detect_device
         @curTitle = Title.new
@@ -41,6 +42,25 @@ class AutoHB
         @dialog.backtitle = "Auto Handbrake"
 
         self.parse_options
+        begin
+            hb = `HandBrakeCLI --version 2>/dev/null`
+        rescue
+            hb = ''
+        end
+        begin
+            flatpak = `flatpak run --command=HandBrakeCLI fr.handbrake.ghb --version 2>/dev/null`
+        rescue
+            flatpak = ''
+        end
+        if !@options[:no_flatpak] and !flatpak.empty?
+            @command = 'flatpak run --command=HandBrakeCLI fr.handbrake.ghb'
+        elsif !hb.empty?
+            @command = 'HandBrakeCLI'
+        else
+            @dialog.msgbox 'HandBrakeCLI could not be found. Please install it.'
+            exit
+        end
+
         if @options[:directory].nil?
             self.verify_device
         else
@@ -142,6 +162,9 @@ class AutoHB
             opts.on('--extension EXTENSION', "File extension for output file [default: mp4]") do |extension|
                 @options[:extension] = extension
             end
+            opts.on('--no-flatpak', "Dont use the Flatpak version of HandBrakeCLI, even if its installed.") do |no_flatpak|
+                @options[:no_flatpak] = true
+            end
         end
 
         optparse.parse!
@@ -164,7 +187,7 @@ class AutoHB
             if @options[:min_duration]
                 min_duration = " --min-duration #{@options[:min_duration]}"
             end
-	    `HandBrakeCLI -i #{@options[:device]}#{min_duration} -t 0 --scan 2>&1`
+            `#{@command} -i "#{input}"#{min_duration} -t 0 --scan 2>&1`
         end
     end
 
@@ -605,7 +628,6 @@ class AutoHB
                 if @options[:subtitles_forced]
                     subtitle += " -F"
                 end
-		command = "HandBrakeCLI -i #{@options[:device]} -o \"#{filename}\" #{preset} -t #{title_number} #{subtitle}"
                 if @options[:subtitles_burned]
                     subtitle += " --subtitle-burn"
                 end
@@ -641,6 +663,7 @@ class AutoHB
                         episode_number += 1
                     end
                     title = @titles[title_number.to_i]
+                    command = "#{@command} -i #{@options[:device]} -o \"#{outputpath}\" #{preset} -t #{title_number} #{subtitle}"
                     @queue.push command
                 end
             else
@@ -650,6 +673,7 @@ class AutoHB
                         episode_number += 1
                     end
                     inputpath = @options[:directory] + '/' + file
+                    command = "#{@command} -i \"#{inputpath}\" -o \"#{outputpath}\" #{preset} -t 1 #{subtitle}"
                     @queue.push command
                 end
             end
