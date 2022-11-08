@@ -11,7 +11,7 @@ and executes HandBrakeCLI commands based on command-line arugments or answers to
 prompts.
 
 When scanning, any titles shorter than DURATION (if specified) will be ignored.  The script
-will look at the remaining titles and attempt to find a group of sequential, similar-length 
+will look at the remaining titles and attempt to find a group of sequential, similar-length
 titles matching the length of the DVD's main feature.  If found, it will offer to rip this
 group as a set of sequentially-numbered episodes, otherwise it will offer to rip the main
 feature.  If detection is unsuccessful or incorrect, the user can override the titles to be
@@ -37,7 +37,7 @@ ripped.
         -s, --default-season NUMBER      Default season number for file naming [default: read from disc or ask]
         -E, --episode NUMBER             First episode number for file naming (won't ask again)
         -e, --default-episode EPISODE    Default first episode number for file naming [default: 1]
-            --preset PRESET              Handbrake preset to use (list with `HandBrakeCLI -z`), 
+            --preset PRESET              Handbrake preset to use (list with `HandBrakeCLI -z`),
                                          or custom preset exported from Handbrake GUI as a JSON file [default: Normal]
             --[no-]eject                 Eject disc when done [default: true]
         -m, --min-duration [DURATION]    Min duration
@@ -47,9 +47,9 @@ ripped.
         autohb.rb # Scan all titles on the default device (/dev/dvd or /dev/cdrom and prompt for all questions)
         autohb.rb -i /dev/sr0 -o /mnt/media -m 240 # Scan all titles over 240 seconds (4 minutes) from /dev/sr0,
             # output files to /mnt/media, prompt for all questions.
-        autohb.rb -T "The Simpsons" -S 5 -E 4 # Pre-set the first episode file name to "The Simpsons S05E04" and 
+        autohb.rb -T "The Simpsons" -S 5 -E 4 # Pre-set the first episode file name to "The Simpsons S05E04" and
             # name the remaining episodes sequentially, skipping these questions in the wizard.
-        autohb.rb -t "The Simpsons" -s 5 -e 4 # Default the first episode file name to "The Simpsons S05E04" and 
+        autohb.rb -t "The Simpsons" -s 5 -e 4 # Default the first episode file name to "The Simpsons S05E04" and
             # name the remaining episodes sequentially, but allow these to be overridden in the wizard.
         autohb.rb -d "/Videos/The Simpsons Season 1 Disc 1"
             # instead of scanning a disc, scan the given directory for video files to convert.
