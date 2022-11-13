@@ -662,8 +662,8 @@ class AutoHB
 
             if @options[:directory].nil?
                 @titles_to_rip.each do |title_number|
+                    outputpath = outputtemplate % episode_number
                     if !episode_number.nil?
-                        outputpath = outputtemplate % episode_number
                         episode_number += 1
                     end
                     title = @titles[title_number.to_i]
@@ -672,8 +672,8 @@ class AutoHB
                 end
             else
                 @files.each do |file|
+                    outputpath = outputtemplate % episode_number
                     if !episode_number.nil?
-                        outputpath = outputtemplate % episode_number
                         episode_number += 1
                     end
                     inputpath = @options[:directory] + '/' + file
