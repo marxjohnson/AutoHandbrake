@@ -465,7 +465,11 @@ class AutoHB
 
     def get_title
         if @options[:default_title].nil?
-            default = @disc_title
+            if @options[:directory]
+                default = @options[:directory].split('/').pop
+            else
+                default = @disc_title
+            end
         else
             default = @options[:default_title]
         end
