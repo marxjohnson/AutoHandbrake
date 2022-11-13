@@ -616,7 +616,7 @@ class AutoHB
                @options[:title] = self.get_title
             end
 
-            multipletitles = (@titles_to_rip.length > 1 or @files.length > 1)
+            multipletitles = (@titles_to_rip.length > 1 or @files.length > 1 or !@options[:first_episode].nil?)
             if multipletitles and @options[:season].nil?
                 @options[:season] = self.get_season
             end
