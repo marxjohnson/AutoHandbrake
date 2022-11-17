@@ -26,7 +26,6 @@ class AutoHB
             :extension => "mp4",
             :no_flatpak => false
         }
-        self.detect_device
         @curTitle = Title.new
         @titles = Array.new
         @disc_title = ''
@@ -61,25 +60,46 @@ class AutoHB
             exit
         end
 
+        if @options[:device].nil? and @options[:directory].nil?
+            validsource = false
+            default = self.detect_device
+        
+            while !validsource
+                question = 'Enter drive or directory:'
+                answer = @dialog.inputbox(question, 0, 0, "\"#{default}\"").strip
+                if File.blockdev?(answer)
+                    @options[:device] = answer
+                    validsource = true
+                elsif File.directory?(answer)
+                    @options[:directory] = answer
+                    validsource = true
+                else
+                    default = answer
+                end
+            end
+        end
+
         if @options[:directory].nil?
             self.verify_device
         else
             self.verify_directory
+            @options[:eject] = false
         end
     end
 
     def detect_device
-    @options[:device] = Dir["/dev/dvd*"].pop
-        if @options[:device].nil?
-            @options[:device] = Dir["/dev/cdrom*"].pop
+        device = Dir["/dev/dvd*"].pop
+        if device.nil?
+            device = Dir["/dev/cdrom*"].pop
         end
+        return device
     end
 
     def verify_device
-    if @options[:device].nil?
-        @dialog.msgbox "No DVD drive was found, and none specified. Exiting."
-        exit
-    end
+        if @options[:device].nil?
+            @dialog.msgbox "No DVD drive was found, and none specified. Exiting."
+            exit
+        end
     end
 
     def verify_directory
