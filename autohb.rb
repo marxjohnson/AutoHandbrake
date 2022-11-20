@@ -2,6 +2,8 @@
 
 require 'optparse'
 require 'duration'
+require 'tmpdir'
+require 'taglib'
 require 'mattscilipoti-rdialog'
 
 class AutoHB
@@ -578,146 +580,196 @@ class AutoHB
     end
 
     def main
-        begin
-            if @files == nil
-                data = self.scan @options[:device]
-                self.parse_output data
+        if @files == nil
+            data = self.scan @options[:device]
+            self.parse_output data
 
-                self.find_episode_groups
-                if @episode_groups.length > 0
-                    if @episode_groups.length > 1
-                        # Display groups and prompt for choice
-                        group = @episode_groups[self.select_episode_group.to_i]
-                        if group.nil?
-                            if self.confirm_main_title
-                                self.rip_main_title
-                            end
-                        else
-                            self.rip_episode_group group
+            self.find_episode_groups
+            if @episode_groups.length > 0
+                if @episode_groups.length > 1
+                    # Display groups and prompt for choice
+                    group = @episode_groups[self.select_episode_group.to_i]
+                    if group.nil?
+                        if self.confirm_main_title
+                            self.rip_main_title
                         end
                     else
-                        # Display group and confirm
-                        group = @episode_groups.pop
-                        if self.confirm_episode_group group
-                            self.rip_episode_group group
-                        end
+                        self.rip_episode_group group
                     end
                 else
-                    # Display main title and confirm
-                    if self.confirm_main_title
-                        self.rip_main_title
+                    # Display group and confirm
+                    group = @episode_groups.pop
+                    if self.confirm_episode_group group
+                        self.rip_episode_group group
                     end
                 end
-
-                if @titles_to_rip.length == 0
-                    self.select_titles
-                end
-
-                if @titles_to_rip.length == 0
-                    @dialog.msgbox "No titles selected, exiting\n"
-                    exit
-                end
-
             else
-                path = @options[:directory] + '/' + @files[0]
-                data = self.scan path
-                self.parse_output data
-            end
-
-            if @options[:subtitles].nil?
-                if !self.add_subtitles?
-                    @subtitle_to_rip = self.get_subtitles
-                end
-            else
-                @subtitle_to_rip = self.get_subtitle_track @options[:subtitles]
-            end
-
-            if @options[:title].nil?
-               @options[:title] = self.get_title
-            end
-
-            multipletitles = (@titles_to_rip.length > 1 or @files.length > 1 or !@options[:first_episode].nil?)
-            if multipletitles and @options[:season].nil?
-                @options[:season] = self.get_season
-            end
-
-            if multipletitles and @options[:first_episode].nil?
-               @options[:first_episode] = self.get_first_episode
-            end
-
-            # Build commands to rip titles
-            subtitle = ""
-            if !@subtitle_to_rip.nil?
-                subtitle += "--subtitle #{@subtitle_to_rip}"
-                if @options[:subtitles_forced]
-                    subtitle += " -F"
-                end
-                if @options[:subtitles_burned]
-                    subtitle += " --subtitle-burn"
+                # Display main title and confirm
+                if self.confirm_main_title
+                    self.rip_main_title
                 end
             end
-            if @options[:preset].end_with? ".json"
-                preset = "--preset-import-file \"#{@options[:preset]}\" --preset=\"#{File.basename(@options[:preset], ".json")}\""
-            elsif
-                preset = "--preset=\"#{@options[:preset]}\""
+
+            if @titles_to_rip.length == 0
+                self.select_titles
             end
 
-            folder_name = "#{@options[:output]}/#{@options[:title]}"
-            if !File.exists? folder_name
-                Dir.mkdir folder_name
-            end
-            episode = " "
-            if !@options[:season].nil?
-                episode += "S%02d" % @options[:season]
-            end
-            if !@options[:first_episode].nil?
-                episode_number = @options[:first_episode].to_i
-                episode += "E%02d"
-            end
-            if episode == " "
-                episode = ""
+            if @titles_to_rip.length == 0
+                @dialog.msgbox "No titles selected, exiting\n"
+                exit
             end
 
-            outputtemplate = "#{folder_name}/#{@options[:title]}#{episode}.#{@options[:extension]}"
+        else
+            path = @options[:directory] + '/' + @files[0]
+            data = self.scan path
+            self.parse_output data
+        end
 
-            if @options[:directory].nil?
-                @titles_to_rip.each do |title_number|
-                    outputpath = outputtemplate % episode_number
-                    if !episode_number.nil?
-                        episode_number += 1
+        if @options[:subtitles].nil?
+            if !self.add_subtitles?
+                @subtitle_to_rip = self.get_subtitles
+            end
+        else
+            @subtitle_to_rip = self.get_subtitle_track @options[:subtitles]
+        end
+
+        if @options[:title].nil?
+            @options[:title] = self.get_title
+        end
+
+        multipletitles = (@titles_to_rip.length > 1 or @files.length > 1 or !@options[:first_episode].nil?)
+        if multipletitles and @options[:season].nil?
+            @options[:season] = self.get_season
+        end
+
+        if multipletitles and @options[:first_episode].nil?
+            @options[:first_episode] = self.get_first_episode
+        end
+
+        # Build commands to rip titles
+        subtitle = ""
+        if !@subtitle_to_rip.nil?
+            subtitle += "--subtitle #{@subtitle_to_rip}"
+            if @options[:subtitles_forced]
+                subtitle += " -F"
+            end
+            if @options[:subtitles_burned]
+                subtitle += " --subtitle-burn"
+            end
+        end
+        if @options[:preset].end_with? ".json"
+            preset = "--preset-import-file \"#{@options[:preset]}\" --preset=\"#{File.basename(@options[:preset], ".json")}\""
+        elsif
+            preset = "--preset=\"#{@options[:preset]}\""
+        end
+
+        folder_name = "#{@options[:output]}/#{@options[:title]}"
+        if !File.exists? folder_name
+            Dir.mkdir folder_name
+        end
+        episode = " "
+        if !@options[:season].nil?
+            episode += "S%02d" % @options[:season]
+        end
+        if !@options[:first_episode].nil?
+            episode_number = @options[:first_episode].to_i
+            episode += "E%02d"
+        end
+        if episode == " "
+            episode = ""
+        end
+
+        outputtemplate = "#{folder_name}/#{@options[:title]}#{episode}.#{@options[:extension]}"
+
+        if @options[:directory].nil?
+            @titles_to_rip.each do |title_number|
+                outputpath = outputtemplate % episode_number
+                if !episode_number.nil?
+                    episode_number += 1
+                end
+                title = @titles[title_number.to_i]
+                command = "#{@command} -i #{@options[:device]} -o \"#{outputpath}\" #{preset} -t #{title_number} #{subtitle}"
+                @queue.push command
+            end
+        else
+            @files.each do |file|
+                outputpath = outputtemplate % episode_number
+                if !episode_number.nil?
+                    episode_number += 1
+                end
+                inputpath = @options[:directory] + '/' + file
+                command = "#{@command} -i \"#{inputpath}\" -o \"#{outputpath}\" #{preset} -t 1 #{subtitle}"
+                @queue.push command
+            end
+        end
+
+        queuepath = Dir.tmpdir() + '/autohb-queue'
+        if File.exist? queuepath
+            commandqueue = "Existing queue found.\n"
+            commandqueue += @queue.join("\n")
+            commandqueue += "\n\nAdd these commands to the queue?"
+            if @dialog.yesno commandqueue.gsub('"', '\"'), @queue.length + 8, 80
+                File.open(queuepath, 'a') do |queuefile|
+                    @queue.each do |command|
+                        queuefile.write command, "\n"
                     end
-                    title = @titles[title_number.to_i]
-                    command = "#{@command} -i #{@options[:device]} -o \"#{outputpath}\" #{preset} -t #{title_number} #{subtitle}"
-                    @queue.push command
                 end
             else
-                @files.each do |file|
-                    outputpath = outputtemplate % episode_number
-                    if !episode_number.nil?
-                        episode_number += 1
-                    end
-                    inputpath = @options[:directory] + '/' + file
-                    command = "#{@command} -i \"#{inputpath}\" -o \"#{outputpath}\" #{preset} -t 1 #{subtitle}"
-                    @queue.push command
-                end
+                @dialog.msgbox "Command not added to queue, exiting"
             end
-
+        else
             commandqueue = "Command Queue Created:\n"
             commandqueue += @queue.join("\n")
             commandqueue += "\n\nProcess this command queue?"
             if @dialog.yesno commandqueue.gsub('"', '\"'), @queue.length + 8, 80
                 # Run Commands, yay!
-                @queue.each do |command|
-                    system command
+                # Write the commands to the queue.
+                File.open(queuepath, 'w') do |queuefile|
+                    @queue.each do |command|
+                        queuefile.write command, "\n"
+                    end
                 end
+                finished = false
+                while finished == false do
+                    commands = []
+                    command = ''
+                    # Read the next command from the file.
+                    File.open(queuepath, 'r', chomp: true) do |queuefile|
+                        commands = queuefile.readlines
+                        command = commands.shift
+                    end
+                    # Run the command.
+                    system command
+                    # Make sure the title tag matches the name used for the file.
+                    outputpath = /-o "(.+?)" /.match(command)[1]
+                    fileref = TagLib::FileRef.new outputpath
+                    fileref.tag.title = File.basename outputpath, ".#{@options[:extension]}"
+                    fileref.save()
+                    fileref.close()
+                    # Re-read the file in case someone added to it while we were working,
+                    # and remove the command we just processed.
+                    File.open(queuepath, 'r', chomp: true) do |queuefile|
+                        commands = queuefile.readlines
+                        commands.shift
+                    end
+                    if commands.length == 0
+                        finished = true
+                    else
+                        File.open(queuepath, 'w', chomp: true) do |queuefile| 
+                            queuefile.write commands.join("\n")
+                        end
+                    end
+                end
+                File.delete(queuepath)
             else
                 @dialog.msgbox "Queue not processed, exiting"
             end
-            if @options[:eject]
-                system "eject #{@options[:device]}"
-            end
-            system "clear" or system "cls"
         end
+
+        if @options[:eject]
+            system "eject #{@options[:device]}"
+        end
+        system "clear" or system "cls"
     end
 end
 
