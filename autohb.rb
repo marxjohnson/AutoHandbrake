@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'bundler/setup'
+require 'open3'
 require 'optparse'
 require 'duration'
 require 'tmpdir'
@@ -739,7 +741,31 @@ class AutoHB
                         command = commands.shift
                     end
                     # Run the command.
-                    system command
+                    Open3.popen3 command do |stdin, stdout, stderr, status_thread|
+                        status = ''
+                        if ENV['DISPLAY'].nil? or @dialog.path_to_dialog != '/usr/bin/gdialog'
+                            @dialog.gauge "Processing", 0
+                            gaugein = nil
+                        else
+                            gaugein, gaugeout, gauge_thread = Open3.popen2("#{@dialog.path_to_dialog} --gauge Processing 10 50 0")
+                        end
+                        stdout.each_char do |char|
+                            status += char
+                            if char == '%'
+                                statusparts = status.split(' ')
+                                percent = statusparts[-2].to_i
+                                message = statusparts.slice(-7, 7).join(' ')
+                                if gaugein.nil?
+                                    @dialog.gauge message, percent
+                                else
+                                    gaugein.write "#{percent}\n"
+                                    gaugein.write "##{message}\n"
+                                end
+                                status = ''
+                            end
+                        end
+                        raise "Encode failed"  unless status_thread.value.success?
+                    end
                     # Make sure the title tag matches the name used for the file.
                     outputpath = /-o "(.+?)" /.match(command)[1]
                     fileref = TagLib::FileRef.new outputpath
