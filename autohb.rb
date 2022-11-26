@@ -743,25 +743,38 @@ class AutoHB
                     # Run the command.
                     Open3.popen3 command do |stdin, stdout, stderr, status_thread|
                         status = ''
-                        if ENV['DISPLAY'].nil? or @dialog.path_to_dialog != '/usr/bin/gdialog'
-                            @dialog.gauge "Processing", 0
-                            gaugein = nil
-                        else
-                            gaugein, gaugeout, gauge_thread = Open3.popen2("#{@dialog.path_to_dialog} --gauge Processing 10 50 0")
+                        filepath = command.match(/-o "([^"]+)"/).captures[0]
+                        filename = Pathname.new(filepath).basename
+                        # Set up a progress bar.
+                        gaugein, gaugeout, gauge_thread = Open3.popen2("#{@dialog.path_to_dialog} --title 'Processing #{filename}' --gauge 'Processing #{filename}' 10 100 0")
+                        # Output progress in text mode.
+                        outputthread = Thread.new do
+                            gaugeout.each_char do |c|
+                                print c
+                            end
                         end
+                        # Update the progress bar each time the percentage is output.
                         stdout.each_char do |char|
                             status += char
                             if char == '%'
                                 statusparts = status.split(' ')
                                 percent = statusparts[-2].to_i
                                 message = statusparts.slice(-7, 7).join(' ')
-                                if gaugein.nil?
-                                    @dialog.gauge message, percent
+                                gaugein.write "#{percent}\n"
+                                if ENV['DISPLAY'].nil? || @dialog.path_to_dialog != '/usr/bin/gdialog'
+                                    gaugein.write "XXX\n"
+                                    gaugein.write "#{message}\n"
+                                    gaugein.write "XXX\n"
                                 else
-                                    gaugein.write "#{percent}\n"
                                     gaugein.write "##{message}\n"
                                 end
                                 status = ''
+                                if percent == 100
+                                    outputthread.kill
+                                    gaugein.close
+                                    gaugeout.close
+                                    Process.kill("TERM", gauge_thread.pid)
+                                end
                             end
                         end
                         raise "Encode failed"  unless status_thread.value.success?
@@ -787,6 +800,7 @@ class AutoHB
                     end
                 end
                 File.delete(queuepath)
+                @dialog.msgbox "Queue complete!"
             else
                 @dialog.msgbox "Queue not processed, exiting"
             end
