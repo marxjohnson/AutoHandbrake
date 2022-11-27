@@ -39,8 +39,10 @@ class AutoHB
         @subtitle_to_rip = nil
         @queue = Array.new
         @dialog = RDialog.new
-        if File.exist? '/usr/bin/gdialog'
+        @zenity = false
+        if !ENV['DISPLAY'].nil? and File.exist? '/usr/bin/gdialog'
             @dialog.path_to_dialog = '/usr/bin/gdialog'
+            @zenity = true
         end
         @dialog.backtitle = "Auto Handbrake"
 
@@ -746,37 +748,42 @@ class AutoHB
                         filepath = command.match(/-o "([^"]+)"/).captures[0]
                         filename = Pathname.new(filepath).basename
                         # Set up a progress bar.
-                        gaugein, gaugeout, gauge_thread = Open3.popen2("#{@dialog.path_to_dialog} --title 'Processing #{filename}' --gauge 'Processing #{filename}' 10 100 0")
-                        # Output progress in text mode.
-                        outputthread = Thread.new do
-                            gaugeout.each_char do |c|
-                                print c
-                            end
+                        # rdialog's gague implementation doesn't let us update the percentage, and the gdialog/zenity wrapper
+                        # misses some arguments, so we'll call zenity or dialog ourselves in this case.
+
+                        if @zenity
+                            gaugecommand = "zenity --title 'Processing #{filename}' --progress --auto-close --auto-kill"
+                        else
+                            gaugecommand = "dialog --title 'Processing #{filename}' --gauge 'Processing #{filename}' 10 100 0"
                         end
-                        # Update the progress bar each time the percentage is output.
-                        stdout.each_char do |char|
-                            status += char
-                            if char == '%'
-                                statusparts = status.split(' ')
-                                percent = statusparts[-2].to_i
-                                message = statusparts.slice(-7, 7).join(' ')
-                                gaugein.write "#{percent}\n"
-                                if ENV['DISPLAY'].nil? || @dialog.path_to_dialog != '/usr/bin/gdialog'
-                                    gaugein.write "XXX\n"
-                                    gaugein.write "#{message}\n"
-                                    gaugein.write "XXX\n"
-                                else
-                                    gaugein.write "##{message}\n"
-                                end
-                                status = ''
-                                if percent == 100
-                                    outputthread.kill
-                                    gaugein.close
-                                    gaugeout.close
-                                    Process.kill("TERM", gauge_thread.pid)
+                        puts gaugecommand
+                        Open3.popen2 gaugecommand do |gaugein, gaugeout, gauge_thread|
+                            # Output progress in text mode.
+                            outputthread = Thread.new do
+                                gaugeout.each_char do |c|
+                                    print c
                                 end
                             end
+                            # Update the progress bar each time the percentage is output.
+                            stdout.each_char do |char|
+                                status += char
+                                if char == '%'
+                                    statusparts = status.split(' ')
+                                    percent = statusparts[-2].to_i
+                                    message = statusparts.slice(-7, 7).join(' ')
+                                    gaugein.write "#{percent}\n"
+                                    if @zenity
+                                        gaugein.write "##{message}\n"
+                                    else
+                                        gaugein.write "XXX\n"
+                                        gaugein.write "#{message}\n"
+                                        gaugein.write "XXX\n"
+                                    end
+                                    status = ''
+                                end
+                            end
                         end
+                        outputthread.kill
                         raise "Encode failed"  unless status_thread.value.success?
                     end
                     # Make sure the title tag matches the name used for the file.
