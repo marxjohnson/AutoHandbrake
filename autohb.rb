@@ -45,6 +45,8 @@ class AutoHB
             @zenity = true
         end
         @dialog.backtitle = "Auto Handbrake"
+        @queuepath = Dir.tmpdir() + '/autohb-queue'
+        @append = false
 
         self.parse_options
         begin
@@ -583,7 +585,22 @@ class AutoHB
         return answer
     end
 
+    def check_existing_queue
+        if File.exists? @queuepath
+            question = 'Queue file exists. Append to this queue, or replace it with a new one?'
+            answers = [['Append'], ['Replace']]
+            answer = @dialog.menu question, answers, 10, 50
+            if answer == false
+                exit
+            end
+            if answer == 'Append'
+                @append = true
+            end
+        end
+    end
+
     def main
+        self.check_existing_queue
         if @files == nil
             data = self.scan @options[:device]
             self.parse_output data
@@ -707,13 +724,12 @@ class AutoHB
             end
         end
 
-        queuepath = Dir.tmpdir() + '/autohb-queue'
-        if File.exist? queuepath
+        if @append
             commandqueue = "Existing queue found.\n"
             commandqueue += @queue.join("\n")
             commandqueue += "\n\nAdd these commands to the queue?"
             if @dialog.yesno commandqueue.gsub('"', '\"'), @queue.length + 8, 80
-                File.open(queuepath, 'a') do |queuefile|
+                File.open(@queuepath, 'a') do |queuefile|
                     @queue.each do |command|
                         queuefile.write command, "\n"
                     end
@@ -728,7 +744,7 @@ class AutoHB
             if @dialog.yesno commandqueue.gsub('"', '\"'), @queue.length + 8, 80
                 # Run Commands, yay!
                 # Write the commands to the queue.
-                File.open(queuepath, 'w') do |queuefile|
+                File.open(@queuepath, 'w') do |queuefile|
                     @queue.each do |command|
                         queuefile.write command, "\n"
                     end
@@ -738,7 +754,7 @@ class AutoHB
                     commands = []
                     command = ''
                     # Read the next command from the file.
-                    File.open(queuepath, 'r', chomp: true) do |queuefile|
+                    File.open(@queuepath, 'r', chomp: true) do |queuefile|
                         commands = queuefile.readlines
                         command = commands.shift
                     end
@@ -751,10 +767,11 @@ class AutoHB
                         # rdialog's gague implementation doesn't let us update the percentage, and the gdialog/zenity wrapper
                         # misses some arguments, so we'll call zenity or dialog ourselves in this case.
 
+                        title = "Processing #{filename} (Queue remaining: #{commands.length})"
                         if @zenity
-                            gaugecommand = "zenity --title 'Processing #{filename}' --progress --auto-close --auto-kill"
+                            gaugecommand = "zenity --title '#{title}' --progress --auto-close --auto-kill"
                         else
-                            gaugecommand = "dialog --title 'Processing #{filename}' --gauge 'Processing #{filename}' 10 100 0"
+                            gaugecommand = "dialog --title '#{title}' --gauge 'Processing #{filename}' 10 100 0"
                         end
                         puts gaugecommand
                         Open3.popen2 gaugecommand do |gaugein, gaugeout, gauge_thread|
@@ -794,19 +811,19 @@ class AutoHB
                     fileref.close()
                     # Re-read the file in case someone added to it while we were working,
                     # and remove the command we just processed.
-                    File.open(queuepath, 'r', chomp: true) do |queuefile|
+                    File.open(@queuepath, 'r', chomp: true) do |queuefile|
                         commands = queuefile.readlines
                         commands.shift
                     end
                     if commands.length == 0
                         finished = true
                     else
-                        File.open(queuepath, 'w', chomp: true) do |queuefile| 
+                        File.open(@queuepath, 'w', chomp: true) do |queuefile| 
                             queuefile.write commands.join("\n")
                         end
                     end
                 end
-                File.delete(queuepath)
+                File.delete(@queuepath)
                 @dialog.msgbox "Queue complete!"
             else
                 @dialog.msgbox "Queue not processed, exiting"
