@@ -773,7 +773,6 @@ class AutoHB
                         else
                             gaugecommand = "dialog --title '#{title}' --gauge 'Processing #{filename}' 10 100 0"
                         end
-                        puts gaugecommand
                         Open3.popen2 gaugecommand do |gaugein, gaugeout, gauge_thread|
                             # Output progress in text mode.
                             outputthread = Thread.new do
@@ -787,7 +786,17 @@ class AutoHB
                                 if char == '%'
                                     statusparts = status.split(' ')
                                     percent = statusparts[-2].to_i
-                                    message = statusparts.slice(-7, 7).join(' ')
+                                    messageparts = statusparts.slice(-7, 7)
+                                    currenttask = messageparts[2].to_i
+                                    totaltasks = messageparts[4].to_i
+                                    # Dont let the progress bar get killed if there's more tasks to process.
+                                    if percent == 100 and currenttask < totaltasks
+                                        percent = 99
+                                    end
+                                    if percent == 0
+                                        percent = 1
+                                    end
+                                    message = messageparts.join(' ')
                                     gaugein.write "#{percent}\n"
                                     if @zenity
                                         gaugein.write "##{message}\n"
