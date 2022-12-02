@@ -754,19 +754,20 @@ class AutoHB
                     commands = []
                     command = ''
                     # Read the next command from the file.
-                    File.open(@queuepath, 'r', chomp: true) do |queuefile|
+                    File.open(@queuepath, 'r') do |queuefile|
                         commands = queuefile.readlines
-                        command = commands.shift
+                        command = commands.shift.strip
                     end
                     # Run the command.
                     Open3.popen3 command do |stdin, stdout, stderr, status_thread|
                         status = ''
+                        percent = 0
                         filepath = command.match(/-o "([^"]+)"/).captures[0]
                         filename = Pathname.new(filepath).basename
+
                         # Set up a progress bar.
                         # rdialog's gague implementation doesn't let us update the percentage, and the gdialog/zenity wrapper
                         # misses some arguments, so we'll call zenity or dialog ourselves in this case.
-
                         title = "Processing #{filename} (Queue remaining: #{commands.length})"
                         if @zenity
                             gaugecommand = "zenity --title '#{title}' --progress --auto-close --auto-kill"
@@ -774,10 +775,12 @@ class AutoHB
                             gaugecommand = "dialog --title '#{title}' --gauge 'Processing #{filename}' 10 100 0"
                         end
                         Open3.popen2 gaugecommand do |gaugein, gaugeout, gauge_thread|
-                            # Output progress in text mode.
-                            outputthread = Thread.new do
-                                gaugeout.each_char do |c|
-                                    print c
+                            if !@zenity
+                                # Output progress in text mode.
+                                outputthread = Thread.new do
+                                    gaugeout.each_char do |c|
+                                        print c
+                                    end
                                 end
                             end
                             # Update the progress bar each time the percentage is output.
@@ -793,23 +796,24 @@ class AutoHB
                                     if percent == 100 and currenttask < totaltasks
                                         percent = 99
                                     end
-                                    if percent == 0
-                                        percent = 1
-                                    end
                                     message = messageparts.join(' ')
-                                    gaugein.write "#{percent}\n"
-                                    if @zenity
-                                        gaugein.write "##{message}\n"
-                                    else
-                                        gaugein.write "XXX\n"
-                                        gaugein.write "#{message}\n"
-                                        gaugein.write "XXX\n"
+                                    begin
+                                        if @zenity
+                                            gaugein.write "##{message}\n"
+                                        else
+                                            gaugein.write "XXX\n"
+                                            gaugein.write "#{message}\n"
+                                            gaugein.write "XXX\n"
+                                        end
+                                        gaugein.write "#{percent}\n"
+                                    rescue
+                                        next
                                     end
                                     status = ''
+                                    percent = 0
                                 end
                             end
                         end
-                        outputthread.kill
                         raise "Encode failed"  unless status_thread.value.success?
                     end
                     # Make sure the title tag matches the name used for the file.
@@ -820,15 +824,15 @@ class AutoHB
                     fileref.close()
                     # Re-read the file in case someone added to it while we were working,
                     # and remove the command we just processed.
-                    File.open(@queuepath, 'r', chomp: true) do |queuefile|
+                    File.open(@queuepath, 'r') do |queuefile|
                         commands = queuefile.readlines
                         commands.shift
                     end
                     if commands.length == 0
                         finished = true
                     else
-                        File.open(@queuepath, 'w', chomp: true) do |queuefile| 
-                            queuefile.write commands.join("\n")
+                        File.open(@queuepath, 'w') do |queuefile|
+                            queuefile.write commands.join
                         end
                     end
                 end
