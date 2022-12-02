@@ -593,7 +593,7 @@ class AutoHB
             if answer == false
                 exit
             end
-            if answer == 'Append'
+            if answer.strip == 'Append'
                 @append = true
             end
         end
