@@ -589,7 +589,7 @@ class AutoHB
         if File.exists? @queuepath
             question = 'Queue file exists. Append to this queue, or replace it with a new one?'
             answers = [['Append'], ['Replace']]
-            answer = @dialog.menu question, answers, 10, 50
+            answer = @dialog.radiolist question, answers, 10, 50
             if answer == false
                 exit
             end
